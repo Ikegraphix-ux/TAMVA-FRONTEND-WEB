@@ -10,7 +10,8 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tamva.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.tamva.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
