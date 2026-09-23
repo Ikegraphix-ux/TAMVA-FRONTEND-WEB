@@ -85,28 +85,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
-        <Container>
-          <SectionHeading eyebrow="Team" title="The people behind TAMVA" />
-          <div className="mt-8 max-w-2xl rounded-xl2 border border-surface-border bg-surface-muted p-8">
-            <p className="text-[15px] leading-relaxed text-ink-muted">
-              [Team profiles — pending official publication]
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      <section className="pb-16 sm:pb-24">
-        <Container>
-          <SectionHeading eyebrow="Ecosystem" title="Partners & ecosystem" />
-          <div className="mt-8 max-w-2xl rounded-xl2 border border-surface-border bg-surface-muted p-8">
-            <p className="text-[15px] leading-relaxed text-ink-muted">
-              [Partner and ecosystem information — pending official publication]
-            </p>
-          </div>
-        </Container>
-      </section>
-
       <CTA title="Learn more about TAMVA" primaryLabel="Contact us" primaryHref="/contact" />
     </>
   );
