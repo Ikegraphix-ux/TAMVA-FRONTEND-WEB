@@ -1,17 +1,6 @@
-/**
- * Base API client abstraction.
- *
- * This is a thin wrapper around fetch, pointed at NEXT_PUBLIC_API_URL.
- * Until real backend endpoints are supplied, individual services (see
- * ./products.ts, ./contact.ts) fall back to local placeholder data so the
- * UI can be built and reviewed independently of the backend.
- *
- * When the real API is ready: implement the fetch call in each service
- * file and remove its placeholder fallback — the UI components do not
- * need to change.
- */
+/** Thin API client used by the public TAMVA website. */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ?? "";
 
 export class ApiError extends Error {
   status?: number;
@@ -22,18 +11,17 @@ export class ApiError extends Error {
   }
 }
 
+export function isApiConfigured() {
+  return Boolean(API_BASE_URL);
+}
+
 interface RequestOptions extends RequestInit {
   timeoutMs?: number;
 }
 
-export async function apiRequest<T>(
-  path: string,
-  options: RequestOptions = {}
-): Promise<T> {
+export async function apiRequest<T>(path: string, options: RequestOptions = {}): Promise<T> {
   if (!API_BASE_URL) {
-    throw new ApiError(
-      "NEXT_PUBLIC_API_URL is not configured; using placeholder data."
-    );
+    throw new ApiError("NEXT_PUBLIC_API_URL is not configured.");
   }
 
   const { timeoutMs = 10_000, ...init } = options;
@@ -51,10 +39,16 @@ export async function apiRequest<T>(
     });
 
     if (!response.ok) {
-      throw new ApiError(`Request to ${path} failed`, response.status);
+      throw new ApiError(`Request to ${path} failed with status ${response.status}`, response.status);
     }
 
     return (await response.json()) as T;
+  } catch (error) {
+    if (error instanceof ApiError) throw error;
+    if (error instanceof DOMException && error.name === "AbortError") {
+      throw new ApiError(`Request to ${path} timed out.`);
+    }
+    throw new ApiError(`Request to ${path} failed.`);
   } finally {
     clearTimeout(timeout);
   }
