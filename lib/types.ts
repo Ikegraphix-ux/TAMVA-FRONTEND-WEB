@@ -1,7 +1,6 @@
 export interface NavLink {
   label: string;
   href: string;
-  content: string[];
 }
 
 export interface ProductSummary {
@@ -43,6 +42,7 @@ export interface ArticleSummary {
   description: string;
   readingTime: string;
   href: string;
+  content: string[];
 }
 
 export type IconName =
