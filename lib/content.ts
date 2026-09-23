@@ -220,7 +220,12 @@ export const articles: ArticleSummary[] = [
     title: "Getting started with TAMVA Passport",
     description: "A walkthrough of setting up an identity profile and requesting verification.",
     readingTime: "6 min read",
-    href: "/resources",
+    href: "/resources/getting-started-passport",
+    content: [
+      "TAMVA Passport is designed to give people a structured way to manage and present identity information during digital interactions.",
+      "Getting started begins with establishing an identity profile using the information required for the workflow. Verification can then be requested where a stronger level of assurance is needed.",
+      "Once verification is complete, the resulting status can be presented to an organization as part of an interaction. Sharing is intended to be controlled by the person and recorded as part of the verification workflow.",
+    ],
   },
   {
     id: "risk-intelligence-overview",
@@ -228,7 +233,12 @@ export const articles: ArticleSummary[] = [
     title: "Understanding Risk Intelligence signals",
     description: "How structured signals are organized and what they're designed to support.",
     readingTime: "8 min read",
-    href: "/resources",
+    href: "/resources/risk-intelligence-overview",
+    content: [
+      "Risk Intelligence organizes relevant signals into a structured view so teams can review context before making a decision.",
+      "Signals can be gathered from configured sources and presented consistently, making it easier to compare relevant information and identify what needs further review.",
+      "The purpose is decision support rather than automated judgment. Teams remain responsible for reviewing the available context and making the final decision.",
+    ],
   },
   {
     id: "verification-workflows",
@@ -236,7 +246,12 @@ export const articles: ArticleSummary[] = [
     title: "Configuring a verification workflow",
     description: "A practical guide to setting up a verification workflow for your team.",
     readingTime: "5 min read",
-    href: "/resources",
+    href: "/resources/verification-workflows",
+    content: [
+      "A verification workflow starts by defining the information an organization actually needs to validate.",
+      "The workflow then applies those requirements consistently to submitted information, tracks progress, and records the resulting status.",
+      "Keeping requirements explicit helps teams reduce manual variation while maintaining an auditable process for verification activity.",
+    ],
   },
   {
     id: "faq-data-use",
@@ -244,7 +259,12 @@ export const articles: ArticleSummary[] = [
     title: "How is my information used?",
     description: "Answers to common questions about consent, data handling, and access.",
     readingTime: "3 min read",
-    href: "/resources",
+    href: "/resources/faq-data-use",
+    content: [
+      "TAMVA is designed around deliberate information use. Identity information should be collected and shared for a defined purpose rather than reused without context.",
+      "Consent is central to identity-sharing workflows. Access should also be limited according to the role and workflow that requires the information.",
+      "Specific data practices depend on the product, workflow, and applicable requirements. Contact TAMVA for questions about a particular use case.",
+    ],
   },
   {
     id: "principles-of-trust",
@@ -252,15 +272,25 @@ export const articles: ArticleSummary[] = [
     title: "What 'trust infrastructure' actually means",
     description: "A look at the principles behind TAMVA's approach to identity and risk.",
     readingTime: "7 min read",
-    href: "/resources",
+    href: "/resources/principles-of-trust",
+    content: [
+      "Trust infrastructure is the combination of identity, verification, risk context, controls, and auditability that helps digital participants interact with greater confidence.",
+      "For TAMVA, this means structuring information so it can be verified, reviewed, and used responsibly rather than relying on broad claims of trust.",
+      "The approach also keeps human decision-makers involved. Technology can organize evidence and workflow, while accountable people remain responsible for decisions.",
+    ],
   },
   {
     id: "product-updates",
     category: "Announcements",
     title: "Product updates",
-    description: "[Announcement content — pending official publication]",
+    description: "A concise overview of how TAMVA approaches product changes, platform improvements, and published updates.",
     readingTime: "2 min read",
-    href: "/resources",
+    href: "/resources/product-updates",
+    content: [
+      "TAMVA product updates will be published here as features, workflows, and public documentation change.",
+      "Published updates should explain what changed, who is affected, and any relevant actions users or organizations need to take.",
+      "For questions about a specific release or capability, use the contact page to reach the TAMVA team.",
+    ],
   },
 ];
 
