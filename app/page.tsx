@@ -1,50 +1,32 @@
-import { Hero } from "@/components/Hero";
 import { Container } from "@/components/Container";
-import { SectionHeading } from "@/components/SectionHeading";
-import { FeatureCard } from "@/components/FeatureCard";
-import { StepCard } from "@/components/StepCard";
-import { ProductCard } from "@/components/ProductCard";
-import { SolutionCard } from "@/components/SolutionCard";
-import { TrustCard } from "@/components/TrustCard";
 import { CTA } from "@/components/CTA";
+import { FeatureCard } from "@/components/FeatureCard";
+import { Hero } from "@/components/Hero";
 import { LinkButton } from "@/components/Button";
+import { SectionHeading } from "@/components/SectionHeading";
+import { StepCard } from "@/components/StepCard";
 import { Reveal } from "@/components/Reveal";
-import { products, solutions } from "@/lib/content";
 
-const problems = [
-  {
-    icon: "identity" as const,
-    title: "Identity",
-    description: "Know who you are dealing with.",
-    href: "/products/passport",
-  },
-  {
-    icon: "verification" as const,
-    title: "Verification",
-    description: "Validate information with confidence.",
-    href: "/products/verification",
-  },
-  {
-    icon: "risk" as const,
-    title: "Risk Intelligence",
-    description: "Understand relevant signals before making decisions.",
-    href: "/products/risk-intelligence",
-  },
+const features = [
+  { icon: "risk" as const, title: "Real-Time Risk Decisions", description: "Evaluate a transaction in a single API call and get a clear approve, review or decline signal." },
+  { icon: "auditability" as const, title: "Explainable by Design", description: "Every decision returns reason codes your risk and compliance teams can read, audit and defend." },
+  { icon: "privacy" as const, title: "Consent-Aware Data", description: "Connect financial data only with the customer's consent, in line with Open Banking principles." },
+  { icon: "businesses" as const, title: "For PSPs & Fintechs", description: "Add fraud and risk controls without building a risk engine from scratch." },
+  { icon: "organizations" as const, title: "For Lenders & Banks", description: "Enrich credit and onboarding decisions with behavioural signals from a canonical transaction ledger." },
+  { icon: "governance" as const, title: "Built for Ghana", description: "Grounded in the Bank of Ghana Draft Open Banking Directive, with a path to pan-African expansion." },
 ];
 
 const steps = [
-  { number: "01", icon: "discover" as const, title: "Discover", description: "Understand the identity and information relevant to a decision." },
-  { number: "02", icon: "verification" as const, title: "Verify", description: "Validate that information against a consistent standard." },
-  { number: "03", icon: "analyze" as const, title: "Analyze", description: "Structure relevant signals into a clear, reviewable view." },
-  { number: "04", icon: "decide" as const, title: "Decide", description: "Make an informed decision with the context you need." },
+  { number: "01", icon: "discover" as const, title: "Connect", description: "Get sandbox credentials and send transactions to TAMVA through the REST API." },
+  { number: "02", icon: "analyze" as const, title: "Evaluate", description: "Our rules engine and behavioural features score each transaction in real time." },
+  { number: "03", icon: "auditability" as const, title: "Explain", description: "Receive a decision with reason codes, and keep a full audit trail." },
 ];
 
-const trustPrinciples = [
-  { icon: "security" as const, title: "Security", description: "Access to information is controlled and protected." },
-  { icon: "privacy" as const, title: "Privacy", description: "Information is handled with care and used for its intended purpose." },
-  { icon: "governance" as const, title: "Governance", description: "Clear ownership and accountability over how the platform is run." },
-  { icon: "auditability" as const, title: "Auditability", description: "Verification and risk events are traceable." },
-  { icon: "responsible-data" as const, title: "Responsible Data Use", description: "Data is used deliberately, not opportunistically." },
+const principles = [
+  "Reason codes on every decision: no black boxes",
+  "Consent first: customer permission governs data access",
+  "Ghana first: regulatory grounding from day one",
+  "Pan-African ready: one architecture, many markets",
 ];
 
 export default function HomePage() {
@@ -52,95 +34,84 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Problem section */}
       <section className="py-20 sm:py-28">
         <Container>
           <SectionHeading
-            eyebrow="Why TAMVA"
-            title="Trust starts with knowing."
-            description="Organizations and individuals need clear, structured ways to understand who they are dealing with and what the relevant signals are."
+            eyebrow="One API. Clear decisions."
+            title="Financial trust infrastructure for institutions"
+            description="TAMVA delivers real-time, explainable transaction-risk decisions and consent-aware financial data through one API. Built in Ghana, designed for Africa."
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {problems.map((item) => (
-              <Reveal key={item.title}>
-                <FeatureCard {...item} />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+              <Reveal key={feature.title}>
+                <FeatureCard {...feature} />
               </Reveal>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* How TAMVA works */}
       <section className="bg-surface-muted py-20 sm:py-28">
         <Container>
-          <SectionHeading eyebrow="Get started" title="How TAMVA works" />
+          <SectionHeading
+            eyebrow="How TAMVA works"
+            title="From sandbox to shadow-mode pilot"
+            description="Getting started is simple. Three steps take you from your first API call to a pilot your team can evaluate."
+          />
           <div className="mt-14 flex flex-col gap-12 sm:flex-row sm:gap-8">
-            {steps.map((step, i) => (
+            {steps.map((step, index) => (
               <Reveal key={step.number} className="flex-1">
-                <StepCard {...step} isLast={i === steps.length - 1} />
+                <StepCard {...step} isLast={index === steps.length - 1} />
               </Reveal>
             ))}
           </div>
+          <LinkButton href="/resources" variant="ghost" withArrow className="mt-12">
+            Explore the API
+          </LinkButton>
         </Container>
       </section>
 
-      {/* Products */}
-      <section className="py-20 sm:py-28">
-        <Container>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <SectionHeading title="Technology built around trust." />
-            <LinkButton href="/products" variant="ghost" withArrow className="self-start sm:self-auto">
-              View all products
-            </LinkButton>
-          </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {products.map((product) => (
-              <Reveal key={product.slug}>
-                <ProductCard product={product} />
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Solutions */}
-      <section className="bg-surface-muted py-20 sm:py-28">
-        <Container>
-          <SectionHeading title="Built for different trust needs." />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {solutions.map((solution) => (
-              <Reveal key={solution.slug}>
-                <SolutionCard solution={solution} />
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Trust & Security teaser */}
       <section className="bg-primary-900 py-20 sm:py-28">
         <Container>
           <SectionHeading
-            eyebrow="Trust & Security"
-            title="Trust is built into the experience."
+            eyebrow="Why TAMVA"
+            title="Trust you can see in every decision."
+            description="Financial institutions need risk signals they can understand, govern and explain. TAMVA puts those principles at the centre of each transaction decision."
             light
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {trustPrinciples.map((p) => (
-              <Reveal key={p.title}>
-                <TrustCard {...p} />
-              </Reveal>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+            {principles.map((principle) => (
+              <li key={principle} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-5 text-primary-100">
+                <span aria-hidden="true" className="mt-1 text-accent-300">✓</span>
+                <span>{principle}</span>
+              </li>
             ))}
-          </div>
-          <div className="mt-10">
-            <LinkButton href="/trust" variant="secondary" withArrow>
-              Explore Trust & Security
-            </LinkButton>
+          </ul>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <Container>
+          <div className="rounded-2xl border border-surface-border bg-white p-7 shadow-card sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-10">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-accent-600">For developers</p>
+              <h2 className="mt-2 text-h2-mobile font-semibold text-primary-900 sm:text-h2">Explore our documentation.</h2>
+              <p className="mt-3 max-w-2xl leading-relaxed text-ink-muted">Endpoints, schemas and integration guides for <code className="rounded bg-surface-muted px-1.5 py-0.5 text-sm">POST /v1/risk/evaluate</code> and more.</p>
+            </div>
+            <LinkButton href="/resources" withArrow className="mt-6 shrink-0 sm:mt-0">View Documentation</LinkButton>
           </div>
         </Container>
       </section>
 
-      <CTA />
+      <CTA
+        title="Ready to build trust into every transaction?"
+        description="Talk to our partnerships team about sandbox access and your use case."
+        primaryLabel="Request Access"
+        primaryHref="/contact"
+        secondaryLabel="About TAMVA"
+        secondaryHref="/about"
+      />
     </>
   );
 }
+

@@ -16,21 +16,27 @@ export function Hero() {
       <Container className="relative py-20 sm:py-28">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div>
-            <h1 className="text-h1-mobile sm:text-h1 font-semibold tracking-tight text-white">
-              Building Trust in a Digital World
+            <p className="text-sm font-semibold uppercase tracking-wide text-accent-300">
+              Financial trust infrastructure for Africa
+            </p>
+            <h1 className="mt-4 text-h1-mobile sm:text-h1 font-semibold tracking-tight text-white">
+              TAMVA: the financial identity and risk layer for institutions
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-100">
-              Trusted identity, verification and risk intelligence to help organizations make
-              informed decisions.
+              Real-time, explainable transaction-risk decisions and consent-aware financial
+              data, delivered through one API. Built in Ghana, designed for Africa.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <LinkButton href="/about" withArrow>
-                Explore TAMVA
+              <LinkButton href="/contact" withArrow>
+                Request Sandbox Access
               </LinkButton>
-              <LinkButton href="/products" variant="secondary">
-                Explore Products
+              <LinkButton href="/resources" variant="secondary">
+                Explore the API
               </LinkButton>
             </div>
+            <p className="mt-8 text-sm font-medium uppercase tracking-widest text-primary-400">
+              More than a score. A trusted financial identity.
+            </p>
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
@@ -44,10 +50,10 @@ export function Hero() {
 
 function TrustLayerDiagram() {
   const nodes = [
-    { label: "Identity", x: 90, y: 60 },
-    { label: "Verification", x: 310, y: 60 },
-    { label: "Risk Intelligence", x: 310, y: 260 },
-    { label: "Data", x: 90, y: 260 },
+    { label: "Consent", x: 90, y: 60 },
+    { label: "Risk", x: 310, y: 60 },
+    { label: "Decisions", x: 310, y: 260 },
+    { label: "Transactions", x: 90, y: 260 },
   ];
   const center = { x: 200, y: 160 };
 
@@ -56,7 +62,7 @@ function TrustLayerDiagram() {
       viewBox="0 0 400 320"
       className="h-auto w-full"
       role="img"
-      aria-label="Diagram showing Identity, Verification, Risk Intelligence and Data connecting around a central TAMVA node"
+      aria-label="Diagram showing consent, risk, decisions and transactions connecting around a central TAMVA node"
     >
       <defs>
         <linearGradient id="node-glow" x1="0" y1="0" x2="1" y2="1">
@@ -113,3 +119,4 @@ function TrustLayerDiagram() {
     </svg>
   );
 }
+
