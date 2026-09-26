@@ -46,7 +46,7 @@ export default function CareersPage() {
 
           <div className="mt-14 rounded-xl2 border border-surface-border bg-surface-muted p-7 sm:p-9">
             <p className="text-sm font-semibold uppercase tracking-wide text-accent-600">Open roles</p>
-            <h2 className="mt-3 text-xl font-semibold text-primary-900">We're confirming current opportunities.</h2>
+            <h2 className="mt-3 text-xl font-semibold text-primary-900">We&apos;re confirming current opportunities.</h2>
             <p className="mt-2 leading-relaxed text-ink-muted">
               Roles such as Backend Engineer, Risk Analyst, Product Designer and Partnerships Lead are examples only; current openings are to be confirmed.
             </p>
