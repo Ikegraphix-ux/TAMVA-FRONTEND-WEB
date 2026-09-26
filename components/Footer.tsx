@@ -3,44 +3,36 @@ import { Container } from "./Container";
 
 const columns: { title: string; links: { label: string; href: string }[] }[] = [
   {
-    title: "Products",
+    title: "Product",
     links: [
-      { label: "Passport", href: "/products/passport" },
-      { label: "Risk Intelligence", href: "/products/risk-intelligence" },
-      { label: "Verification", href: "/products/verification" },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      { label: "Organizations", href: "/solutions/organizations" },
-      { label: "Businesses", href: "/solutions/businesses" },
-      { label: "Investigators", href: "/solutions/investigators" },
-      { label: "Individuals", href: "/solutions/individuals" },
+      { label: "Risk API", href: "/products#risk-decision-api" },
+      { label: "Rules Engine", href: "/products#rules-engine" },
+      { label: "Data Connectivity", href: "/products#data-connectivity" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
+      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: "/resources" },
-      { label: "Guides", href: "/resources" },
-      { label: "FAQs", href: "/resources" },
-      { label: "Insights", href: "/resources" },
+      { label: "Docs", href: "/resources" },
+      { label: "API Reference", href: "/resources#api-reference" },
+      { label: "Guides", href: "/resources#guides" },
+      { label: "FAQs", href: "/resources#faqs" },
     ],
   },
   {
-    title: "Trust",
+    title: "Trust & Legal",
     links: [
       { label: "Security", href: "/trust" },
-      { label: "Privacy", href: "/trust" },
-      { label: "Terms", href: "/trust" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
     ],
   },
 ];
@@ -49,13 +41,16 @@ export function Footer() {
   return (
     <footer className="border-t border-surface-border bg-primary-900 text-primary-100">
       <Container className="py-14 sm:py-16">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link href="/" className="text-lg font-bold text-white">
               TAMVA
             </Link>
             <p className="mt-3 max-w-[220px] text-sm text-primary-300">
-              Trusted digital identity, verification and risk intelligence.
+              Your financial identity, everywhere.
+            </p>
+            <p className="mt-4 text-xs font-medium uppercase tracking-wide text-primary-400">
+              Trust infrastructure. Powered by technology.
             </p>
           </div>
           {columns.map((col) => (
@@ -83,3 +78,4 @@ export function Footer() {
     </footer>
   );
 }
+

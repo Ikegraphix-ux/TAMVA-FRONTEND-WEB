@@ -10,29 +10,28 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.tamva.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.tamva.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "TAMVA — Trusted Identity, Verification & Risk Intelligence",
+    default: "TAMVA — Financial Trust Infrastructure",
     template: "%s | TAMVA",
   },
   description:
-    "TAMVA is a modern African technology company building trusted digital identity, verification and risk intelligence infrastructure.",
+    "TAMVA delivers explainable transaction-risk decisions and consent-aware financial data for institutions. Built in Ghana, designed for Africa.",
   openGraph: {
     type: "website",
     siteName: "TAMVA",
-    title: "TAMVA — Trusted Identity, Verification & Risk Intelligence",
+    title: "TAMVA — Financial Trust Infrastructure",
     description:
-      "Trusted identity, verification and risk intelligence to help organizations make informed decisions.",
+      "Explainable transaction-risk decisions and consent-aware financial data for institutions. Built in Ghana, designed for Africa.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TAMVA — Trusted Identity, Verification & Risk Intelligence",
+    title: "TAMVA — Financial Trust Infrastructure",
     description:
-      "Trusted identity, verification and risk intelligence to help organizations make informed decisions.",
+      "Explainable transaction-risk decisions and consent-aware financial data for institutions. Built in Ghana, designed for Africa.",
   },
   robots: {
     index: true,
@@ -60,3 +59,4 @@ export default function RootLayout({
     </html>
   );
 }
+

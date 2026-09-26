@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/solutions",
     "/trust",
     "/resources",
+    "/careers",
     "/contact",
   ];
 
@@ -22,3 +23,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 }
+
