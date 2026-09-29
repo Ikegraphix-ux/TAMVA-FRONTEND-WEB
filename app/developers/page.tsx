@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "Developer information and integration availability for the TAMVA platform.",
 };
 
-const resources = [
+const resources: { id: string; title: string; description: string; status?: string }[] = [
   { id: "quickstart", title: "Quickstart", description: "Get sandbox credentials and make your first risk call." },
   { id: "api-reference", title: "API Reference", description: "REST reference for POST /v1/risk/evaluate, including request and response examples." },
   { id: "guides", title: "Guides", description: "Integration patterns, reason-code handling and rule configuration." },
