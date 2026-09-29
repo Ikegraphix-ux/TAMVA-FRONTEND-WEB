@@ -12,7 +12,7 @@ export const primaryNav: PrimaryNavItem[] = [
     label: "Products",
     items: [
       { label: "All products", href: "/products" },
-      { label: "TAMVA App", href: "/products" },
+      { label: "TAMVA App", href: "/products/tamva-app" },
       { label: "Financial Passport", href: "/products/passport" },
       { label: "Risk Intelligence", href: "/products/risk-intelligence" },
       { label: "Verification", href: "/products/verification" },
@@ -61,18 +61,9 @@ export const products: ProductDetail[] = [
     whyItMatters:
       "Fragmented identity checks slow people down and leave organizations guessing. A shared, trusted identity layer reduces friction while keeping information handling accountable.",
     howItWorks: [
-      {
-        title: "Establish",
-        description: "An identity profile is created from the information a person chooses to provide.",
-      },
-      {
-        title: "Verify",
-        description: "Relevant details are checked against trusted sources as part of the verification workflow.",
-      },
-      {
-        title: "Present",
-        description: "The verified profile can be presented to organizations that need to confirm identity.",
-      },
+      { title: "Establish", description: "An identity profile is created from the information a person chooses to provide." },
+      { title: "Verify", description: "Relevant details are checked against trusted sources as part of the verification workflow." },
+      { title: "Present", description: "The verified profile can be presented to organizations that need to confirm identity." },
     ],
     capabilities: [
       "Structured identity profile",
@@ -91,13 +82,11 @@ export const products: ProductDetail[] = [
     faqs: [
       {
         question: "Who can use TAMVA Passport?",
-        answer:
-          "TAMVA Passport is designed for individuals who want a trusted identity profile and for organizations that need to verify identity information.",
+        answer: "TAMVA Passport is designed for individuals who want a trusted identity profile and for organizations that need to verify identity information.",
       },
       {
         question: "Is my information shared automatically?",
-        answer:
-          "No. Information is shared only when you choose to share it as part of a specific verification request.",
+        answer: "No. Information is shared only when you choose to share it as part of a specific verification request.",
       },
     ],
   },
@@ -105,13 +94,10 @@ export const products: ProductDetail[] = [
     slug: "risk-intelligence",
     name: "Risk Intelligence",
     tagline: "Structured signals for informed decisions.",
-    description:
-      "Structured intelligence and risk signals designed to support informed decisions.",
+    description: "Structured intelligence and risk signals designed to support informed decisions.",
     icon: "risk",
-    overview:
-      "Risk Intelligence organizes relevant signals into a structured view so teams can make informed decisions with clearer context.",
-    whyItMatters:
-      "Decisions made without adequate context carry more risk. Structured intelligence helps teams understand relevant signals before acting.",
+    overview: "Risk Intelligence organizes relevant signals into a structured view so teams can make informed decisions with clearer context.",
+    whyItMatters: "Decisions made without adequate context carry more risk. Structured intelligence helps teams understand relevant signals before acting.",
     howItWorks: [
       { title: "Collect", description: "Relevant signals are gathered from configured sources." },
       { title: "Structure", description: "Signals are organized into a consistent, reviewable format." },
@@ -134,8 +120,7 @@ export const products: ProductDetail[] = [
     faqs: [
       {
         question: "Does Risk Intelligence make decisions automatically?",
-        answer:
-          "No. It structures relevant signals so your team can make an informed decision; the decision itself remains with your team.",
+        answer: "No. It structures relevant signals so your team can make an informed decision; the decision itself remains with your team.",
       },
     ],
   },
@@ -143,13 +128,10 @@ export const products: ProductDetail[] = [
     slug: "verification",
     name: "Verification",
     tagline: "Workflows to validate identity and information.",
-    description:
-      "Verification workflows designed to help validate relevant identity and information.",
+    description: "Verification workflows designed to help validate relevant identity and information.",
     icon: "verification",
-    overview:
-      "Verification provides configurable workflows for validating identity and supporting information as part of an organization's process.",
-    whyItMatters:
-      "Manual verification is slow and inconsistent. A structured workflow helps teams apply the same standard every time.",
+    overview: "Verification provides configurable workflows for validating identity and supporting information as part of an organization's process.",
+    whyItMatters: "Manual verification is slow and inconsistent. A structured workflow helps teams apply the same standard every time.",
     howItWorks: [
       { title: "Request", description: "A verification request is configured for the information that matters." },
       { title: "Validate", description: "Submitted information is checked against the configured requirements." },
@@ -172,8 +154,7 @@ export const products: ProductDetail[] = [
     faqs: [
       {
         question: "Can verification requirements be customized?",
-        answer:
-          "Yes. Verification workflows are configured around the information your organization actually needs to validate.",
+        answer: "Yes. Verification workflows are configured around the information your organization actually needs to validate.",
       },
     ],
   },
