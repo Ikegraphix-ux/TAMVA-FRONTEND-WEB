@@ -123,7 +123,7 @@ export function Navbar() {
       <div
         id="mobile-nav"
         className={`fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-surface transition-transform duration-200 ease-out lg:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? "visible translate-x-0" : "invisible translate-x-full"
         }`}
         aria-hidden={!isOpen}
       >
@@ -166,9 +166,13 @@ export function Navbar() {
               ))}
             </ul>
           </nav>
-          <LinkButton href="/contact" className="mt-6 w-full" onClick={() => setIsOpen(false)}>
+          <Link
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            className="mt-6 flex min-h-[44px] w-full items-center justify-center rounded-full bg-accent-500 px-6 text-[15px] font-semibold text-white transition-colors hover:bg-accent-600"
+          >
             Request Access
-          </LinkButton>
+          </Link>
         </Container>
       </div>
     </header>
