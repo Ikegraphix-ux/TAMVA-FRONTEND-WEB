@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { getCanonicalAlternates } from "@/lib/site";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
