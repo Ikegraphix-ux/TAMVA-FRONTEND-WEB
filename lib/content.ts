@@ -12,6 +12,7 @@ export const primaryNav: PrimaryNavItem[] = [
     label: "Products",
     items: [
       { label: "All products", href: "/products" },
+      { label: "TAMVA App", href: "/products" },
       { label: "Financial Passport", href: "/products/passport" },
       { label: "Risk Intelligence", href: "/products/risk-intelligence" },
       { label: "Verification", href: "/products/verification" },
@@ -256,4 +257,3 @@ export function getProduct(slug: string): ProductDetail | undefined {
 export function getSolution(slug: string): SolutionDetail | undefined {
   return solutions.find((s) => s.slug === slug);
 }
-
