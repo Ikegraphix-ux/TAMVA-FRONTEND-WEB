@@ -1,124 +1,53 @@
 import type { Metadata } from "next";
 import { getCanonicalAlternates } from "@/lib/site";
-
-export const metadata: Metadata = {
-  alternates: getCanonicalAlternates("/"),
-};
-
 import { Container } from "@/components/Container";
 import { CTA } from "@/components/CTA";
-import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
 import { LinkButton } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
-import { StepCard } from "@/components/StepCard";
-import { Reveal } from "@/components/Reveal";
+import { products } from "@/lib/content";
 
-const features = [
-  { icon: "risk" as const, title: "Real-Time Risk Decisions", description: "Evaluate a transaction in a single API call and get a clear approve, review or decline signal." },
-  { icon: "auditability" as const, title: "Explainable by Design", description: "Every decision returns reason codes your risk and compliance teams can read, audit and defend." },
-  { icon: "privacy" as const, title: "Consent-Aware Data", description: "Connect financial data only with the customer's consent, in line with Open Banking principles." },
-  { icon: "businesses" as const, title: "For PSPs & Fintechs", description: "Add fraud and risk controls without building a risk engine from scratch." },
-  { icon: "organizations" as const, title: "For Lenders & Banks", description: "Enrich credit and onboarding decisions with behavioural signals from a canonical transaction ledger." },
-  { icon: "governance" as const, title: "Built for Ghana", description: "Grounded in the Bank of Ghana Draft Open Banking Directive, with a path to pan-African expansion." },
+export const metadata: Metadata = { alternates: getCanonicalAlternates("/") };
+
+const audiences = [
+  { title: "Individuals", description: "The TAMVA consumer experience and Financial Passport are being built to help people manage identity information and share it with consent.", href: "/solutions/individuals" },
+  { title: "Businesses", description: "Explore identity, verification and risk information designed to support business workflows.", href: "/solutions/businesses" },
+  { title: "Fintechs", description: "Learn how the TAMVA platform is intended to support fintech products and their customers.", href: "/solutions/businesses" },
+  { title: "Financial institutions", description: "Review platform capabilities for institutions evaluating identity, verification and risk workflows.", href: "/solutions/organizations" },
 ];
 
-const steps = [
-  { number: "01", icon: "discover" as const, title: "Connect", description: "Get sandbox credentials and send transactions to TAMVA through the REST API." },
-  { number: "02", icon: "analyze" as const, title: "Evaluate", description: "Our rules engine and behavioural features score each transaction in real time." },
-  { number: "03", icon: "auditability" as const, title: "Explain", description: "Receive a decision with reason codes, and keep a full audit trail." },
-];
-
-const principles = [
-  "Reason codes on every decision: no black boxes",
-  "Consent first: customer permission governs data access",
-  "Ghana first: regulatory grounding from day one",
-  "Pan-African ready: one architecture, many markets",
+const platformAreas = [
+  ["Identity", "Establish and present identity information through the Financial Passport experience."],
+  ["Verification", "Support identity and information checks through structured workflows."],
+  ["Risk context", "Organize relevant signals to help organizations review information."],
 ];
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-
-      <section className="py-20 sm:py-28">
-        <Container>
-          <SectionHeading
-            eyebrow="One API. Clear decisions."
-            title="Financial trust infrastructure for institutions"
-            description="TAMVA delivers real-time, explainable transaction-risk decisions and consent-aware financial data through one API. Built in Ghana, designed for Africa."
-          />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <Reveal key={feature.title}>
-                <FeatureCard {...feature} />
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-surface-muted py-20 sm:py-28">
-        <Container>
-          <SectionHeading
-            eyebrow="How TAMVA works"
-            title="From sandbox to shadow-mode pilot"
-            description="Getting started is simple. Three steps take you from your first API call to a pilot your team can evaluate."
-          />
-          <div className="mt-14 flex flex-col gap-12 sm:flex-row sm:gap-8">
-            {steps.map((step, index) => (
-              <Reveal key={step.number} className="flex-1">
-                <StepCard {...step} isLast={index === steps.length - 1} />
-              </Reveal>
-            ))}
-          </div>
-          <LinkButton href="/resources" variant="ghost" withArrow className="mt-12">
-            Explore the API
-          </LinkButton>
-        </Container>
-      </section>
-
-      <section className="bg-primary-900 py-20 sm:py-28">
-        <Container>
-          <SectionHeading
-            eyebrow="Why TAMVA"
-            title="Trust you can see in every decision."
-            description="Financial institutions need risk signals they can understand, govern and explain. TAMVA puts those principles at the centre of each transaction decision."
-            light
-          />
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-            {principles.map((principle) => (
-              <li key={principle} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-5 text-primary-100">
-                <span aria-hidden="true" className="mt-1 text-accent-300">✓</span>
-                <span>{principle}</span>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <Container>
-          <div className="rounded-2xl border border-surface-border bg-white p-7 shadow-card sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-10">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent-600">For developers</p>
-              <h2 className="mt-2 text-h2-mobile font-semibold text-primary-900 sm:text-h2">Explore our documentation.</h2>
-              <p className="mt-3 max-w-2xl leading-relaxed text-ink-muted">Endpoints, schemas and integration guides for <code className="rounded bg-surface-muted px-1.5 py-0.5 text-sm">POST /v1/risk/evaluate</code> and more.</p>
-            </div>
-            <LinkButton href="/resources" withArrow className="mt-6 shrink-0 sm:mt-0">View Documentation</LinkButton>
-          </div>
-        </Container>
-      </section>
-
-      <CTA
-        title="Ready to build trust into every transaction?"
-        description="Talk to our partnerships team about sandbox access and your use case."
-        primaryLabel="Request Access"
-        primaryHref="/contact"
-        secondaryLabel="About TAMVA"
-        secondaryHref="/about"
-      />
+      <section className="py-16 sm:py-24"><Container>
+        <SectionHeading eyebrow="The TAMVA platform" title="Financial technology infrastructure built for African markets." description="TAMVA is building connected products for people and organizations, with identity, verification and risk capabilities under one platform. Ghana is the initial market." />
+        <p className="mt-8 max-w-3xl leading-relaxed text-ink-muted">Financial services work better when people and organizations can share reliable information with clarity and control. TAMVA is developing products to support those interactions.</p>
+      </Container></section>
+      <section className="bg-surface-muted py-16 sm:py-24"><Container>
+        <SectionHeading eyebrow="Products" title="Capabilities for people and organizations." description="Explore the product areas being developed across the TAMVA platform." />
+        <div className="mt-10 grid gap-5 md:grid-cols-3">{products.map((product) => <article key={product.slug} className="rounded-xl2 border border-surface-border bg-white p-6 shadow-card sm:p-7"><h3 className="text-xl font-semibold text-primary-900">{product.name}</h3><p className="mt-3 leading-relaxed text-ink-muted">{product.description}</p><LinkButton href={"/products/" + product.slug} variant="ghost" withArrow className="mt-5">Explore product</LinkButton></article>)}</div>
+      </Container></section>
+      <section className="py-16 sm:py-24"><Container>
+        <SectionHeading eyebrow="How TAMVA works" title="A connected platform, shaped around real needs." description="TAMVA brings product capabilities together so people and organizations can use clearer information in their financial interactions." />
+        <div className="mt-10 grid gap-5 md:grid-cols-3">{platformAreas.map(([title, description], index) => <article key={title} className="rounded-xl2 border border-surface-border bg-white p-6"><span className="text-sm font-bold tracking-widest text-accent-600">0{index + 1}</span><h3 className="mt-3 text-lg font-semibold text-primary-900">{title}</h3><p className="mt-2 leading-relaxed text-ink-muted">{description}</p></article>)}</div>
+      </Container></section>
+      <section className="bg-primary-900 py-16 sm:py-24"><Container>
+        <SectionHeading eyebrow="Who TAMVA serves" title="Designed for people and the organizations around them." description="The platform brings together an individual experience and tools for the organizations that provide financial services." light />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">{audiences.map((audience) => <a key={audience.title} href={audience.href} className="rounded-xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:bg-white/[0.08]"><h3 className="text-lg font-semibold text-white">{audience.title}</h3><p className="mt-2 leading-relaxed text-primary-100">{audience.description}</p><span className="mt-4 inline-block text-sm font-semibold text-accent-300">Explore solutions →</span></a>)}</div>
+      </Container></section>
+      <section className="py-16 sm:py-24"><Container><div className="grid gap-6 lg:grid-cols-2">
+        <article className="rounded-xl2 border border-surface-border bg-surface-muted p-7 sm:p-9"><p className="text-sm font-semibold uppercase tracking-wide text-accent-600">Trust and responsibility</p><h2 className="mt-3 text-2xl font-semibold text-primary-900">Clarity, consent and accountability.</h2><p className="mt-3 leading-relaxed text-ink-muted">These principles guide how TAMVA approaches identity information and decision support. Public technical and certification claims are limited to details that can be verified.</p><LinkButton href="/trust" variant="ghost" withArrow className="mt-5">Our security approach</LinkButton></article>
+        <article className="rounded-xl2 border border-surface-border bg-surface-muted p-7 sm:p-9"><p className="text-sm font-semibold uppercase tracking-wide text-accent-600">For developers</p><h2 className="mt-3 text-2xl font-semibold text-primary-900">Integration materials are in preparation.</h2><p className="mt-3 leading-relaxed text-ink-muted">API specifications and sandbox availability should be confirmed with the TAMVA team before integration work begins.</p><LinkButton href="/resources" variant="ghost" withArrow className="mt-5">Developer documentation</LinkButton></article>
+      </div></Container></section>
+      <section className="bg-surface-muted py-16 sm:py-20"><Container><SectionHeading eyebrow="Our starting point" title="Built in Ghana, with an African outlook." description="Ghana is the initial market for TAMVA. The platform is being shaped with the ambition to serve financial needs across African markets." /></Container></section>
+      <CTA title="Explore what TAMVA is building." description="Talk with our team about the platform, intended use cases and current availability." primaryLabel="Contact TAMVA" primaryHref="/contact" secondaryLabel="About TAMVA" secondaryHref="/about" />
     </>
   );
 }
-

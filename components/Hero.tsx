@@ -17,25 +17,24 @@ export function Hero() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-accent-300">
-              Financial trust infrastructure for Africa
+              Financial technology infrastructure for African markets
             </p>
             <h1 className="mt-4 text-h1-mobile sm:text-h1 font-semibold tracking-tight text-white">
-              TAMVA: the financial identity and risk layer for institutions
+              One platform for identity, verification and financial trust
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-100">
-              Real-time, explainable transaction-risk decisions and consent-aware financial
-              data, delivered through one API. Built in Ghana, designed for Africa.
+              TAMVA brings together products for individuals, businesses and institutions. Ghana is our initial market, with a broader African ambition.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <LinkButton href="/contact" withArrow>
-                Request Sandbox Access
+              <LinkButton href="/products" withArrow>
+                Explore the platform
               </LinkButton>
-              <LinkButton href="/resources" variant="secondary">
-                Explore the API
+              <LinkButton href="/solutions" variant="secondary">
+                See who TAMVA serves
               </LinkButton>
             </div>
             <p className="mt-8 text-sm font-medium uppercase tracking-widest text-primary-400">
-              More than a score. A trusted financial identity.
+              One platform. Products for people and organizations.
             </p>
           </div>
 

@@ -7,8 +7,8 @@ import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
   alternates: getCanonicalAlternates("/resources"),
-  title: "Documentation",
-  description: "Integration documentation for the TAMVA Risk Decision API and financial data platform.",
+  title: "Developers",
+  description: "Developer information and integration availability for the TAMVA platform.",
 };
 
 const resources = [
@@ -27,9 +27,9 @@ export default function ResourcesPage() {
           <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Docs" }]} />
           <div className="mt-6">
             <SectionHeading
-              eyebrow="Documentation"
-              title="Build with TAMVA."
-              description="Integration documentation for endpoints, schemas and guides is being prepared. Request sandbox access to discuss your integration with our team."
+              eyebrow="Developers"
+              title="Developer documentation is in preparation."
+              description="The API reference, quickstart, integration guides and sandbox details will be published when verified against the backend contract. Contact the team to discuss current availability."
             />
           </div>
         </Container>
@@ -50,8 +50,8 @@ export default function ResourcesPage() {
       </section>
 
       <CTA
-        title="Need to discuss an integration?"
-        description="Talk to our partnerships team about sandbox access and documentation."
+        title="Discuss a potential integration."
+        description="Ask the TAMVA team about documentation and current sandbox availability."
         primaryLabel="Request Sandbox Access"
         primaryHref="/contact"
       />
