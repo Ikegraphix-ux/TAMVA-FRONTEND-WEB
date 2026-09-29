@@ -8,7 +8,7 @@ import { CTA } from "@/components/CTA";
 export const metadata: Metadata = {
   alternates: getCanonicalAlternates("/trust"),
   title: "Security",
-  description: "How TAMVA approaches consent, auditability, security and regulatory alignment.",
+  description: "TAMVA trust principles for consent, traceability and responsible public claims.",
 };
 
 const principles = [
@@ -22,11 +22,11 @@ const principles = [
   },
   {
     title: "Secure by design",
-    description: "The architecture is designed for authenticated APIs, encryption in transit and at rest, and least-privilege access. Each control must be confirmed against the SRD before it is claimed as implemented.",
+    description: "TAMVA limits public security statements to information that can be verified. Detailed technical controls are not published here.",
   },
   {
-    title: "Regulatory alignment",
-    description: "TAMVA is designed around the Bank of Ghana Draft Open Banking Directive. Regulatory alignment does not imply approval or certification.",
+    title: "Responsible claims",
+    description: "Product, regulatory and certification statements should be supported by verified sources and evidence.",
   },
   {
     title: "Deterministic and explainable",
@@ -42,9 +42,9 @@ export default function TrustPage() {
           <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Security" }]} />
           <div className="mt-6">
             <SectionHeading
-              eyebrow="Security & compliance"
-              title="Security is built in, not bolted on."
-              description="TAMVA handles sensitive financial data. Its architecture is designed around a documented threat model and regulatory requirements."
+              eyebrow="Security & trust"
+              title="A clear approach to trust and security."
+              description="TAMVA is developing financial technology products with attention to consent, accountability and responsible handling of information."
               light
             />
           </div>
@@ -70,7 +70,7 @@ export default function TrustPage() {
           <div className="mx-auto max-w-3xl rounded-xl2 border border-surface-border bg-surface-muted p-7 sm:p-9">
             <h2 className="text-xl font-semibold text-primary-900">Security details</h2>
             <p className="mt-3 leading-relaxed text-ink-muted">
-              Specific technical controls are being confirmed against the system requirements before publication. TAMVA does not claim ISO 27001, SOC 2 or PCI DSS certification.
+              TAMVA does not claim ISO 27001, SOC 2 or PCI DSS certification. Technical controls and regulatory status should be discussed with TAMVA through a verified contact channel.
             </p>
           </div>
         </Container>

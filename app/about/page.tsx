@@ -8,12 +8,12 @@ import { CTA } from "@/components/CTA";
 export const metadata: Metadata = {
   alternates: getCanonicalAlternates("/about"),
   title: "About",
-  description: "Why TAMVA is building financial trust infrastructure for institutions in Ghana and across Africa.",
+  description: "Why TAMVA is building financial technology infrastructure for African markets, starting in Ghana.",
 };
 
 const beliefs = [
   { title: "Explainability is a product, not a feature.", description: "If a decision cannot be explained, it cannot be trusted." },
-  { title: "Regulation is an input.", description: "We design around the Bank of Ghana Open Banking Directive from the start." },
+  { title: "Build for real markets.", description: "Our product direction starts with the needs of people and organizations in Ghana and across Africa." },
   { title: "Consent belongs to the customer.", description: "Financial data flows only with permission." },
   { title: "Start narrow, build right.", description: "We focus on doing transaction risk well before expanding." },
 ];
@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="mt-10 max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-accent-300">About TAMVA</p>
             <h1 className="mt-3 text-h1-mobile font-semibold tracking-tight text-white sm:text-h1">
-              Trust is the missing layer in African finance.
+              Financial technology infrastructure for African markets.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-primary-100">
               Financial services in Ghana and across Africa are growing fast, but institutions
@@ -80,19 +80,6 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
-        </Container>
-      </section>
-
-      <section className="py-16 sm:py-24">
-        <Container>
-          <SectionHeading eyebrow="Our team" title="People building the trust layer" />
-          <div className="mt-8 max-w-3xl rounded-xl2 border border-surface-border bg-white p-7 shadow-card sm:p-9">
-            <p className="leading-relaxed text-ink-muted">
-              We are building TAMVA with the institutions and communities shaping Africa&apos;s
-              financial future.
-            </p>
-            <p className="mt-4 text-sm italic text-ink-faint">[Founder and team bios, photos and roles to be confirmed.]</p>
-          </div>
         </Container>
       </section>
 
