@@ -5,12 +5,43 @@ import type {
   SolutionDetail,
 } from "./types";
 
-export const primaryNav: NavLink[] = [
-  { label: "Company", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Solutions", href: "/solutions" },
+type PrimaryNavItem = { label: string; href?: string; items?: NavLink[] };
+
+export const primaryNav: PrimaryNavItem[] = [
+  {
+    label: "Products",
+    items: [
+      { label: "All products", href: "/products" },
+      { label: "Financial Passport", href: "/products/passport" },
+      { label: "Risk Intelligence", href: "/products/risk-intelligence" },
+      { label: "Verification", href: "/products/verification" },
+    ],
+  },
+  {
+    label: "Solutions",
+    items: [
+      { label: "Financial Institutions", href: "/solutions/organizations" },
+      { label: "Fintechs", href: "/solutions#fintechs" },
+      { label: "Businesses", href: "/solutions/businesses" },
+      { label: "Individuals", href: "/solutions/individuals" },
+    ],
+  },
+  {
+    label: "Developers",
+    items: [
+      { label: "Documentation", href: "/resources" },
+      { label: "Sandbox Access", href: "/contact" },
+    ],
+  },
   { label: "Security", href: "/trust" },
-  { label: "Developers", href: "/resources" },
+  {
+    label: "Company",
+    items: [
+      { label: "About TAMVA", href: "/about" },
+      { label: "Careers", href: "/careers" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
 ];
 
 export const utilityNav: NavLink[] = [{ label: "Contact", href: "/contact" }];

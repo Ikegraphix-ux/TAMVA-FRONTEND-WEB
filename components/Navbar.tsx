@@ -8,6 +8,11 @@ import { Icon } from "./Icon";
 import { LinkButton } from "./Button";
 import { primaryNav } from "@/lib/content";
 
+function isCurrentPath(pathname: string, href: string): boolean {
+  const path = href.split("#")[0];
+  return pathname === path || (path !== "/" && pathname.startsWith(path + "/"));
+}
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,12 +25,10 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mobile menu on route change.
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
-  // Lock body scroll while the mobile menu is open.
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
@@ -46,6 +49,7 @@ export function Navbar() {
           <Link
             href="/"
             className="flex items-center gap-2 text-lg font-bold text-primary-900"
+            aria-label="TAMVA home"
           >
             <span
               className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-900 text-white"
@@ -59,16 +63,41 @@ export function Navbar() {
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
-            <ul className="flex items-center gap-8">
-              {primaryNav.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    aria-current={pathname === link.href ? "page" : undefined}
-                    className={`text-[15px] font-medium transition-colors hover:text-primary-900 ${pathname === link.href ? "text-primary-900" : "text-ink-muted"}`}
-                  >
-                    {link.label}
-                  </Link>
+            <ul className="flex items-center gap-7">
+              {primaryNav.map((item) => (
+                <li key={item.label}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      aria-current={isCurrentPath(pathname, item.href) ? "page" : undefined}
+                      className="py-3 text-[15px] font-medium text-ink-muted transition-colors hover:text-primary-900"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <details className="group relative">
+                      <summary
+                        className="flex cursor-pointer list-none items-center gap-1 py-3 text-[15px] font-medium text-ink-muted transition-colors hover:text-primary-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-600"
+                        aria-current={item.items?.some((link) => isCurrentPath(pathname, link.href)) ? "page" : undefined}
+                      >
+                        {item.label}
+                        <span aria-hidden="true" className="text-xs">▾</span>
+                      </summary>
+                      <ul className="absolute left-0 top-full z-50 min-w-56 rounded-xl border border-surface-border bg-white p-2 shadow-card">
+                        {item.items?.map((link) => (
+                          <li key={link.href}>
+                            <Link
+                              href={link.href}
+                              aria-current={isCurrentPath(pathname, link.href) ? "page" : undefined}
+                              className="block rounded-lg px-4 py-3 text-sm font-medium text-ink-muted transition-colors hover:bg-surface-muted hover:text-primary-900"
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  )}
                 </li>
               ))}
             </ul>
@@ -96,21 +125,48 @@ export function Navbar() {
         className={`fixed inset-x-0 top-16 bottom-0 z-40 overflow-y-auto bg-surface transition-transform duration-200 ease-out lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        aria-hidden={!isOpen}
       >
         <Container className="py-8">
-          <ul className="flex flex-col gap-1">
-            {[...primaryNav, { label: "Contact", href: "/contact" }].map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="block min-h-[44px] border-b border-surface-border py-3 text-lg font-medium text-primary-900"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <LinkButton href="/contact" className="mt-3 w-full">
+          <nav aria-label="Mobile primary">
+            <ul className="flex flex-col gap-1">
+              {primaryNav.map((item) => (
+                <li key={item.label}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      aria-current={isCurrentPath(pathname, item.href) ? "page" : undefined}
+                      onClick={() => setIsOpen(false)}
+                      className="block min-h-[44px] border-b border-surface-border py-3 text-lg font-medium text-primary-900"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <details className="border-b border-surface-border">
+                      <summary className="flex min-h-[48px] cursor-pointer list-none items-center justify-between py-3 text-lg font-medium text-primary-900">
+                        {item.label}<span aria-hidden="true">＋</span>
+                      </summary>
+                      <ul className="pb-3 pl-4">
+                        {item.items?.map((link) => (
+                          <li key={link.href}>
+                            <Link
+                              href={link.href}
+                              aria-current={isCurrentPath(pathname, link.href) ? "page" : undefined}
+                              onClick={() => setIsOpen(false)}
+                              className="block min-h-[44px] py-3 text-base text-ink-muted"
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <LinkButton href="/contact" className="mt-6 w-full" onClick={() => setIsOpen(false)}>
             Request Access
           </LinkButton>
         </Container>
@@ -118,4 +174,3 @@ export function Navbar() {
     </header>
   );
 }
-
