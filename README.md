@@ -1,6 +1,6 @@
 # TAMVA Public Website
 
-The public-facing TAMVA website for product information, trust principles, resources and contact enquiries. It is separate from the authenticated TAMVA Admin App.
+The public-facing TAMVA platform website for product information, trust principles, developer information and contact enquiries. It is separate from the authenticated TAMVA Admin App.
 
 Built with Next.js App Router, TypeScript, React and Tailwind CSS.
 
@@ -41,8 +41,8 @@ npm run start    # serve the production build locally
 - `/solutions/investigators`
 - `/solutions/individuals`
 - `/trust` — trust and security principles
-- `/resources` — searchable resource library
-- `/resources/[slug]` — individual resource articles
+- `/resources` — developer documentation landing page
+- `/resources/[slug]` — approved developer resources, when available
 - `/contact` — enquiry form
 
 ## Architecture
@@ -62,7 +62,6 @@ Set the public backend URL in `.env.local`:
 
 ```env
 NEXT_PUBLIC_API_URL=https://tamva.onrender.com
-NEXT_PUBLIC_SITE_URL=https://www.tamva.com
 ```
 
 The product service uses the local editorial catalog only when the API URL is not configured or a product endpoint returns 404. Other API failures are surfaced instead of being silently replaced with stale content.
@@ -73,7 +72,7 @@ Before production, confirm that the backend exposes the public endpoints used by
 
 ## Content
 
-Public copy is kept in `lib/content.ts`. The repository intentionally avoids inventing customer numbers, certifications, partner names, office details or other facts that have not been officially supplied.
+Public copy is kept in `lib/content.ts`. The repository intentionally avoids inventing customer numbers, certifications, partner names, office details or other facts that have not been officially supplied. See `CONTENT_GOVERNANCE.md` for rules covering product capabilities, security, regulatory claims, statistics and team information.
 
 Resource articles are stored as structured content and rendered through `app/resources/[slug]/page.tsx`.
 
@@ -81,7 +80,7 @@ Resource articles are stored as structured content and rendered through `app/res
 
 The website is hosted as a Next.js application. GitHub is the source repository; deployment is configured separately with the hosting provider.
 
-Search indexing is disabled by default. In Vercel, keep previews and staging without `NEXT_PUBLIC_INDEXING_ENABLED=true`. To enable indexing, configure both `VERCEL_ENV=production`, `NEXT_PUBLIC_INDEXING_ENABLED=true`, and `NEXT_PUBLIC_SITE_URL` with the confirmed official HTTPS domain in the Production environment. The application then emits canonical URLs for that domain and includes the sitemap in `robots.txt`. A `.vercel.app` URL cannot enable indexing. The official domain has not yet been confirmed, so do not replace the example value until it is.
+Search indexing is disabled by default. In Vercel, keep previews and staging without `NEXT_PUBLIC_INDEXING_ENABLED=true`. To enable indexing, configure both `VERCEL_ENV=production`, `NEXT_PUBLIC_INDEXING_ENABLED=true`, and `NEXT_PUBLIC_SITE_URL` with the confirmed official HTTPS domain in the Production environment. The application then emits canonical URLs for that domain and includes the sitemap in `robots.txt`. A `.vercel.app` URL cannot enable indexing. The official domain has not yet been confirmed. Leave `NEXT_PUBLIC_SITE_URL` unset until it is.
 
 ## Design system
 

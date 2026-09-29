@@ -25,3 +25,7 @@ Keep changes focused. Include a clear summary, user-visible impact, and screensh
 ## Review
 
 A maintainer should review and approve changes before merging. The repository does not yet identify formal code owners.
+
+## Public content review
+
+Follow [CONTENT_GOVERNANCE.md](CONTENT_GOVERNANCE.md) for product, API, regulatory, security, statistics, partnership, team and legal claims. Include the supporting source or approval in the pull request when public claims change.
