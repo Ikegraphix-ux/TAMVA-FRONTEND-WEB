@@ -5,6 +5,7 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Products",
     links: [
+      { label: "TAMVA App", href: "/products/tamva-app" },
       { label: "Financial Passport", href: "/products/passport" },
       { label: "Risk Intelligence", href: "/products/risk-intelligence" },
       { label: "Verification", href: "/products/verification" },
