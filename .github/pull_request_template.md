@@ -8,7 +8,8 @@ Describe the change and why it is needed.
 - [ ] `npm run build`
 - [ ] I reviewed relevant pages at mobile and desktop sizes.
 
-## Content and configuration
+## Public claims and configuration
 
-- [ ] New company, partner, regulatory, security or contact claims are confirmed.
+- [ ] Any new or changed public claim is recorded in `CONTENT_CLAIMS.md` with its source/evidence and owner.
+- [ ] Regulatory, security, certification, statistics, partner and product claims meet `CONTENT_GOVERNANCE.md`.
 - [ ] No secrets or private credentials are included.

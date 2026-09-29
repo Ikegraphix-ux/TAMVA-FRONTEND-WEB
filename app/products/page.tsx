@@ -70,7 +70,7 @@ export default function ProductsPage() {
             <p className="text-sm font-semibold uppercase tracking-wide text-accent-700">On the roadmap</p>
             <h2 className="mt-3 text-xl font-semibold text-primary-900">Consent-Aware Data Connectivity</h2>
             <p className="mt-2 max-w-3xl leading-relaxed text-ink-muted">
-              Connect customer financial data through consent flows aligned with Open Banking principles. Availability and timing are to be confirmed.
+              Potential data connections would require customer permission. Availability, design and timing are to be confirmed.
             </p>
           </div>
 

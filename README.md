@@ -73,7 +73,7 @@ Before production, confirm that the backend exposes the public endpoints used by
 
 ## Content
 
-Public copy is kept in `lib/content.ts`. The repository intentionally avoids inventing customer numbers, certifications, partner names, office details or other facts that have not been officially supplied. See `CONTENT_GOVERNANCE.md` for rules covering product capabilities, security, regulatory claims, statistics and team information.
+Public copy is kept in `lib/content.ts`. The repository intentionally avoids inventing customer numbers, certifications, partner names, office details or other facts that have not been officially supplied. See `CONTENT_GOVERNANCE.md` for the policy and `CONTENT_CLAIMS.md` for the central record of approved public claims.
 
 Resource articles are stored as structured content and rendered through `app/resources/[slug]/page.tsx`.
 

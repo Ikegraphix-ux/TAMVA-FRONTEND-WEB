@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const audiences = [
   {
     title: "Payment Service Providers",
-    description: "Screen transactions in real time, reduce fraud losses and support healthy approval rates.",
+    description: "Review transaction risk signals as part of payment workflows.",
   },
   {
     title: "Digital Lenders",
