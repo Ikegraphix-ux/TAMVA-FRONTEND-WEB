@@ -58,7 +58,7 @@ export default function SolutionsPage() {
         <Container>
           <div className="grid gap-5 sm:grid-cols-2">
             {audiences.map((audience, index) => (
-              <article id={audience.title.toLowerCase().replace(/\\s+/g, "-")} key={audience.title} className="rounded-xl2 border border-surface-border bg-white p-7 shadow-card sm:p-8">
+              <article id={audience.title.toLowerCase().split(" ").join("-")} key={audience.title} className="rounded-xl2 border border-surface-border bg-white p-7 shadow-card sm:p-8">
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-50 text-sm font-bold text-accent-700">0{index + 1}</span>
                 <h2 className="mt-5 text-h3 font-semibold text-primary-900">{audience.title}</h2>
                 <p className="mt-3 leading-relaxed text-ink-muted">{audience.description}</p>
