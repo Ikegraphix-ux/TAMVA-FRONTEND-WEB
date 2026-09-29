@@ -89,6 +89,9 @@ export function Navbar() {
                             <Link
                               href={link.href}
                               aria-current={isCurrentPath(pathname, link.href) ? "page" : undefined}
+                              onClick={(event) => {
+                                event.currentTarget.closest("details")?.removeAttribute("open");
+                              }}
                               className="block rounded-lg px-4 py-3 text-sm font-medium text-ink-muted transition-colors hover:bg-surface-muted hover:text-primary-900"
                             >
                               {link.label}
@@ -152,7 +155,10 @@ export function Navbar() {
                             <Link
                               href={link.href}
                               aria-current={isCurrentPath(pathname, link.href) ? "page" : undefined}
-                              onClick={() => setIsOpen(false)}
+                              onClick={(event) => {
+                                event.currentTarget.closest("details")?.removeAttribute("open");
+                                setIsOpen(false);
+                              }}
                               className="block min-h-[44px] py-3 text-base text-ink-muted"
                             >
                               {link.label}
