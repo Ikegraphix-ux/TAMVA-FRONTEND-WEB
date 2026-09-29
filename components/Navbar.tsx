@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -47,15 +46,20 @@ export function Navbar() {
     >
       <Container>
         <div className="flex h-16 items-center justify-between sm:h-20">
-          <Link href="/" aria-label="TAMVA home" className="flex shrink-0 items-center">
-            <Image
-              src="/images/tamva-logo.png"
-              alt="TAMVA — People. Data. Trust. Opportunity."
-              width={725}
-              height={544}
-              priority
-              className="h-14 w-auto object-contain sm:h-[68px]"
-            />
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-lg font-bold text-primary-900"
+            aria-label="TAMVA home"
+          >
+            <span
+              className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-900 text-white"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                <path d="M4 12l5 8 3-6 3 6 5-8-3-8-2 5-3-6-3 6-2-5-3 8z" />
+              </svg>
+            </span>
+            TAMVA
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:block">
