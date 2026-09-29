@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { PageTransitions } from "@/components/PageTransitions";
 import { Footer } from "@/components/Footer";
 import { getRobotsPolicy, getSiteUrl } from "@/lib/site";
 
@@ -48,7 +49,7 @@ export default function RootLayout({
         </a>
         <Navbar />
         <main id="main-content" className="flex-1">
-          {children}
+          <PageTransitions>{children}</PageTransitions>
         </main>
         <Footer />
       </body>
