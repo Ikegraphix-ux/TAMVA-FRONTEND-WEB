@@ -34,7 +34,7 @@ export const primaryNav: PrimaryNavItem[] = [
       { label: "Documentation", href: "/developers" },
       { label: "API Reference", href: "/developers#api-reference" },
       { label: "Quickstart", href: "/developers#quickstart" },
-      { label: "Sandbox", href: "/contact" },
+      { label: "Sandbox access", href: "/contact" },
       { label: "Changelog", href: "/developers#changelog" },
       { label: "Status", href: "/developers#status" },
     ],
