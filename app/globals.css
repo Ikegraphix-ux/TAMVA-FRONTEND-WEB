@@ -86,3 +86,44 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+.page-transition {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition[data-transition-phase="exiting"] {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 140ms ease-out, transform 140ms ease-out;
+  pointer-events: none;
+}
+
+.page-transition[data-transition-phase="entering"] {
+  animation: page-enter 240ms ease-out both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition[data-transition-phase="exiting"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .page-transition[data-transition-phase="entering"] {
+    animation: none;
+  }
+}
