@@ -14,11 +14,6 @@ export const metadata: Metadata = {
 
 const contactDetails = [
   {
-    icon: "docs" as const,
-    label: "Email",
-    value: "[Company email — pending official publication]",
-  },
-  {
     icon: "organizations" as const,
     label: "Office",
     value: "Accra, Ghana",
