@@ -111,6 +111,7 @@ No confirmed repository owners or `CODEOWNERS` file are currently recorded. Main
 - `/` — homepage
 - `/about` — company overview and principles
 - `/products` — product overview
+- `/products/tamva-app` — consumer-facing TAMVA App overview
 - `/products/passport`
 - `/products/risk-intelligence`
 - `/products/verification`
