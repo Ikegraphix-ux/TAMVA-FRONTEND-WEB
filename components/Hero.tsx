@@ -17,13 +17,15 @@ export function Hero() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-accent-300">
-              Financial technology infrastructure for African markets
+              One connected platform
             </p>
             <h1 className="mt-4 text-h1-mobile sm:text-h1 font-semibold tracking-tight text-white">
-              One platform for identity, verification and financial trust
+              Financial technology infrastructure for African markets.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-primary-100">
-              TAMVA brings together products for individuals, businesses and institutions. Ghana is our initial market, with a broader African ambition.
+              TAMVA is building products for individuals, businesses,
+              institutions and developers. Ghana is our initial market, with a
+              broader African outlook.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <LinkButton href="/products" withArrow>
@@ -34,7 +36,7 @@ export function Hero() {
               </LinkButton>
             </div>
             <p className="mt-8 text-sm font-medium uppercase tracking-widest text-primary-400">
-              One platform. Products for people and organizations.
+              People. Data. Trust. Opportunity.
             </p>
           </div>
 
@@ -49,10 +51,10 @@ export function Hero() {
 
 function TrustLayerDiagram() {
   const nodes = [
-    { label: "Consent", x: 90, y: 60 },
-    { label: "Risk", x: 310, y: 60 },
-    { label: "Decisions", x: 310, y: 260 },
-    { label: "Transactions", x: 90, y: 260 },
+    { label: "Individuals", x: 90, y: 60 },
+    { label: "Businesses", x: 310, y: 60 },
+    { label: "Institutions", x: 310, y: 260 },
+    { label: "Developers", x: 90, y: 260 },
   ];
   const center = { x: 200, y: 160 };
 
@@ -61,7 +63,7 @@ function TrustLayerDiagram() {
       viewBox="0 0 400 320"
       className="h-auto w-full"
       role="img"
-      aria-label="Diagram showing consent, risk, decisions and transactions connecting around a central TAMVA node"
+      aria-label="Individuals, businesses, institutions and developers connected through the TAMVA platform"
     >
       <defs>
         <linearGradient id="node-glow" x1="0" y1="0" x2="1" y2="1">
@@ -95,11 +97,11 @@ function TrustLayerDiagram() {
 
       {nodes.map((node) => (
         <g key={node.label}>
-          <circle cx={node.x} cy={node.y} r={26} fill="white" fillOpacity={0.08} />
+          <circle cx={node.x} cy={node.y} r={32} fill="white" fillOpacity={0.08} />
           <circle
             cx={node.x}
             cy={node.y}
-            r={26}
+            r={32}
             fill="none"
             stroke="white"
             strokeOpacity={0.35}
@@ -107,7 +109,7 @@ function TrustLayerDiagram() {
           />
           <text
             x={node.x}
-            y={node.y < center.y ? node.y - 38 : node.y + 44}
+            y={node.y < center.y ? node.y - 44 : node.y + 50}
             textAnchor="middle"
             className="fill-white text-[12px] font-medium"
           >
@@ -118,4 +120,3 @@ function TrustLayerDiagram() {
     </svg>
   );
 }
-
