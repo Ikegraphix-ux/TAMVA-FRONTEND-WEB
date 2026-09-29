@@ -14,23 +14,23 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: getSiteUrl(),
   title: {
-    default: "TAMVA — Financial Trust Infrastructure",
+    default: "TAMVA — Financial Technology Infrastructure for African Markets",
     template: "%s | TAMVA",
   },
   description:
-    "TAMVA delivers explainable transaction-risk decisions and consent-aware financial data for institutions. Built in Ghana, designed for Africa.",
+    "TAMVA is building financial technology infrastructure for individuals, businesses and institutions across African markets, starting in Ghana.",
   openGraph: {
     type: "website",
     siteName: "TAMVA",
-    title: "TAMVA — Financial Trust Infrastructure",
+    title: "TAMVA — Financial Technology Infrastructure for African Markets",
     description:
-      "Explainable transaction-risk decisions and consent-aware financial data for institutions. Built in Ghana, designed for Africa.",
+      "A financial technology platform for people and organizations across African markets, starting in Ghana.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TAMVA — Financial Trust Infrastructure",
+    title: "TAMVA — Financial Technology Infrastructure for African Markets",
     description:
-      "Explainable transaction-risk decisions and consent-aware financial data for institutions. Built in Ghana, designed for Africa.",
+      "A financial technology platform for people and organizations across African markets, starting in Ghana.",
   },
   robots: getRobotsPolicy(),
 };
@@ -55,4 +55,3 @@ export default function RootLayout({
     </html>
   );
 }
-
