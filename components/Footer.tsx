@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
 
@@ -57,19 +56,12 @@ export function Footer() {
       <Container className="py-14 sm:py-16">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-7">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
-            <Link
-              href="/"
-              aria-label="TAMVA home"
-              className="inline-flex rounded-md bg-white p-1"
-            >
-              <Image
-                src="/images/tamva-logo.png"
-                alt="TAMVA — People. Data. Trust. Opportunity."
-                width={725}
-                height={544}
-                className="h-20 w-auto object-contain"
-              />
+            <Link href="/" className="text-lg font-bold text-white">
+              TAMVA
             </Link>
+            <p className="mt-3 max-w-[220px] text-sm text-primary-300">
+              Your financial identity, everywhere.
+            </p>
             <p className="mt-4 text-xs font-medium uppercase tracking-wide text-primary-400">
               Trust infrastructure. Powered by technology.
             </p>
