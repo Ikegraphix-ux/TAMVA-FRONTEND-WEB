@@ -56,13 +56,13 @@ export const utilityNav: NavLink[] = [{ label: "Contact", href: "/contact" }];
 export const products: ProductDetail[] = [
   {
     slug: "passport",
-    name: "TAMVA Passport",
+    name: "Financial Passport",
     tagline: "A trusted digital identity experience.",
     description:
       "A trusted digital identity experience designed to help establish and verify identity information.",
     icon: "identity",
     overview:
-      "TAMVA Passport gives people and organizations a single, trusted way to present and confirm identity information across digital interactions.",
+      "Financial Passport gives people and organizations a single, trusted way to present and confirm identity information across digital interactions.",
     whyItMatters:
       "Fragmented identity checks slow people down and leave organizations guessing. A shared, trusted identity layer reduces friction while keeping information handling accountable.",
     howItWorks: [
@@ -86,8 +86,8 @@ export const products: ProductDetail[] = [
     ],
     faqs: [
       {
-        question: "Who can use TAMVA Passport?",
-        answer: "TAMVA Passport is designed for individuals who want a trusted identity profile and for organizations that need to verify identity information.",
+        question: "Who can use Financial Passport?",
+        answer: "Financial Passport is designed for individuals who want a trusted identity profile and for organizations that need to verify identity information.",
       },
       {
         question: "Is my information shared automatically?",
