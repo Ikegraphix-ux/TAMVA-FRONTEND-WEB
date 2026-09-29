@@ -33,9 +33,13 @@ export function PageTransitions({ children }: { children: ReactNode }) {
         event.metaKey ||
         event.ctrlKey ||
         event.shiftKey ||
-        event.altKey ||
-        isNavigating.current
+        event.altKey
       ) {
+        return;
+      }
+
+      if (isNavigating.current) {
+        event.preventDefault();
         return;
       }
 
@@ -61,6 +65,11 @@ export function PageTransitions({ children }: { children: ReactNode }) {
       }
 
       event.preventDefault();
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        router.push(destination.pathname + destination.search + destination.hash);
+        return;
+      }
+
       isNavigating.current = true;
       setPhase("exiting");
 
