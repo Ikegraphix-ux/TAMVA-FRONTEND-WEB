@@ -29,7 +29,11 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
     title: "Developers",
     links: [
       { label: "Documentation", href: "/developers" },
-      { label: "Sandbox Access", href: "/contact" },
+      { label: "API Reference", href: "/developers#api-reference" },
+      { label: "Quickstart", href: "/developers#quickstart" },
+      { label: "Sandbox access", href: "/contact" },
+      { label: "Changelog", href: "/developers#changelog" },
+      { label: "Status", href: "/developers#status" },
     ],
   },
   {
@@ -37,6 +41,7 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
     links: [
       { label: "About", href: "/about" },
       { label: "Careers", href: "/careers" },
+      { label: "News & Insights", href: "/resources" },
       { label: "Contact", href: "/contact" },
     ],
   },
