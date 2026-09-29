@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 };
 
 const beliefs = [
-  { title: "Explainability is a product, not a feature.", description: "If a decision cannot be explained, it cannot be trusted." },
-  { title: "Build for real markets.", description: "Our product direction starts with the needs of people and organizations in Ghana and across Africa." },
-  { title: "Consent belongs to the customer.", description: "Financial data flows only with permission." },
-  { title: "Start narrow, build right.", description: "We focus on doing transaction risk well before expanding." },
+  { title: "Build for people and organizations.", description: "A connected platform should support individuals as well as the businesses and institutions serving them." },
+  { title: "Make trust part of the infrastructure.", description: "Identity, information and financial decisions need clear context and accountable use." },
+  { title: "Consent belongs to the customer.", description: "People should have clarity and choice in how their information is shared." },
+  { title: "Start in Ghana. Build for Africa.", description: "Our initial market is Ghana, with a broader African outlook shaping the platform." },
 ];
 
 export default function AboutPage() {
@@ -31,9 +31,10 @@ export default function AboutPage() {
               Financial technology infrastructure for African markets.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-primary-100">
-              Financial services in Ghana and across Africa are growing fast, but institutions
-              still lack a shared, reliable way to know who they are transacting with and how
-              risky a transaction is. TAMVA exists to close that gap.
+              TAMVA is building a platform for people and organizations to engage
+              with financial services through clearer identity, information and
+              decision support. Ghana is our initial market; our outlook extends
+              across Africa.
             </p>
           </div>
         </Container>
@@ -45,18 +46,21 @@ export default function AboutPage() {
             <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-accent-600">Our mission</p>
               <h2 className="mt-3 text-h2-mobile font-semibold text-primary-900 sm:text-h2">
-                Make trusted financial decisions possible for more people.
+                Make trusted financial services more accessible.
               </h2>
             </div>
             <div className="rounded-2xl border border-surface-border bg-surface-muted p-7 sm:p-9">
               <p className="text-lg leading-relaxed text-ink-muted">
-                Give every institution the infrastructure to make fast, fair and explainable
-                financial decisions, so more people can access trusted financial services.
+                We are developing financial technology infrastructure for
+                individuals, businesses and institutions, with products designed
+                to support more informed and trustworthy financial interactions.
               </p>
               <div className="mt-8 border-t border-surface-border pt-6">
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-accent-600">Where we are</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-ink-muted">
-                  Ghana is our launch market. Our roadmap extends to pan-African coverage.
+                  Ghana is TAMVA&apos;s initial market. The platform is being
+                  shaped with the ambition to serve financial needs across
+                  African markets.
                 </p>
               </div>
             </div>
@@ -69,7 +73,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="What we believe"
             title="Trust is earned through the details."
-            description="These principles shape how we build financial identity and transaction-risk infrastructure."
+            description="These principles guide how we build financial technology for people and the organizations around them."
           />
           <ul className="mt-10 grid gap-5 sm:grid-cols-2">
             {beliefs.map((belief, index) => (
@@ -85,8 +89,8 @@ export default function AboutPage() {
 
       <CTA
         title="Build trusted finance with us."
-        description="Work with us to bring clearer, more explainable financial decisions to institutions and their customers."
-        primaryLabel="Request Access"
+        description="Work with us to bring clearer financial technology to people, businesses and institutions."
+        primaryLabel="Contact TAMVA"
         primaryHref="/contact"
         secondaryLabel="Careers"
         secondaryHref="/careers"
@@ -94,4 +98,3 @@ export default function AboutPage() {
     </>
   );
 }
-
