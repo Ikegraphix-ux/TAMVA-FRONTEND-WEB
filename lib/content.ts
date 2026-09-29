@@ -6,7 +6,7 @@ import type {
 } from "./types";
 
 export const primaryNav: NavLink[] = [
-  { label: "About", href: "/about" },
+  { label: "Company", href: "/about" },
   { label: "Products", href: "/products" },
   { label: "Solutions", href: "/solutions" },
   { label: "Security", href: "/trust" },

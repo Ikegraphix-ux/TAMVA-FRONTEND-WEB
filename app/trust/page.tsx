@@ -21,8 +21,8 @@ const principles = [
     description: "TAMVA's decisioning approach includes reason codes and an audit trail so decisions can be reviewed.",
   },
   {
-    title: "Secure by design",
-    description: "TAMVA limits public security statements to information that can be verified. Detailed technical controls are not published here.",
+    title: "Certification status",
+    description: "TAMVA does not claim ISO 27001, SOC 2 or PCI DSS certification.",
   },
   {
     title: "Responsible claims",
