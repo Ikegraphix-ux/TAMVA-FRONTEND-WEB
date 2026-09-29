@@ -91,7 +91,7 @@ export default function ProductsPage() {
         title="Build with the TAMVA API."
         description="Explore the integration overview or request sandbox access for your team."
         primaryLabel="See the API docs"
-        primaryHref="/resources"
+        primaryHref="/developers"
         secondaryLabel="Request Sandbox Access"
         secondaryHref="/contact"
       />

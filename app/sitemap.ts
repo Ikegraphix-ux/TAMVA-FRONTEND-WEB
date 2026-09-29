@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/solutions",
     "/trust",
     "/resources",
+    "/developers",
     "/careers",
     "/contact",
   ];

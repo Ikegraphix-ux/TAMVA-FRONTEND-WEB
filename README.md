@@ -1,6 +1,6 @@
 # TAMVA Public Website
 
-The public-facing TAMVA platform website for product information, trust principles, developer information and contact enquiries. It is separate from the authenticated TAMVA Admin App.
+The public-facing TAMVA platform website for product information, trust principles, developer information and general resources and contact enquiries. It is separate from the authenticated TAMVA Admin App.
 
 Built with Next.js App Router, TypeScript, React and Tailwind CSS.
 
@@ -41,8 +41,9 @@ npm run start    # serve the production build locally
 - `/solutions/investigators`
 - `/solutions/individuals`
 - `/trust` — trust and security principles
-- `/resources` — developer documentation landing page
-- `/resources/[slug]` — approved developer resources, when available
+- `/resources` — general articles and insights (currently no articles published)
+- `/developers` — developer documentation landing page
+- `/resources/[slug]` — general resource articles, when published
 - `/contact` — enquiry form
 
 ## Architecture

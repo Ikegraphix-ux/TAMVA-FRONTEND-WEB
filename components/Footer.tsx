@@ -20,9 +20,13 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
     ],
   },
   {
+    title: "Resources",
+    links: [{ label: "Articles & insights", href: "/resources" }],
+  },
+  {
     title: "Developers",
     links: [
-      { label: "Documentation", href: "/resources" },
+      { label: "Documentation", href: "/developers" },
       { label: "Sandbox Access", href: "/contact" },
     ],
   },
@@ -44,7 +48,7 @@ export function Footer() {
   return (
     <footer className="border-t border-surface-border bg-primary-900 text-primary-100">
       <Container className="py-14 sm:py-16">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-7">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link href="/" className="text-lg font-bold text-white">
               TAMVA

@@ -37,7 +37,7 @@ export function DocsTeaser() {
             <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-ink-muted">
               Everything you need to understand and integrate with TAMVA.
             </p>
-            <LinkButton href="/resources" variant="ghost" withArrow className="mt-6">
+            <LinkButton href="/developers" variant="ghost" withArrow className="mt-6">
               View documentation
             </LinkButton>
           </div>
@@ -45,7 +45,7 @@ export function DocsTeaser() {
             {items.map((item) => (
               <Link
                 key={item.title}
-                href="/resources"
+                href="/developers"
                 className="rounded-xl2 border border-surface-border bg-surface-muted p-5 transition-colors hover:border-accent-200 hover:bg-white"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-accent-600 shadow-card">

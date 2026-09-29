@@ -26,10 +26,11 @@ export const primaryNav: PrimaryNavItem[] = [
       { label: "Individuals", href: "/solutions/individuals" },
     ],
   },
+  { label: "Resources", href: "/resources" },
   {
     label: "Developers",
     items: [
-      { label: "Documentation", href: "/resources" },
+      { label: "Documentation", href: "/developers" },
       { label: "Sandbox Access", href: "/contact" },
     ],
   },
