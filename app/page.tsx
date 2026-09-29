@@ -14,35 +14,41 @@ const audiences = [
   {
     title: "Individuals",
     description:
-      "TAMVA App and Financial Passport are the consumer-facing part of the platform, shaped around financial identity, choice and consent.",
+      "Explore TAMVA App and Financial Passport, the consumer-facing product direction shaped around identity, choice and consent.",
     href: "/solutions/individuals",
   },
   {
-    title: "Businesses & institutions",
+    title: "Businesses",
     description:
-      "Explore Verification and Risk Intelligence as product areas for organizations working with identity information and decision context.",
-    href: "/solutions",
+      "Learn about Verification and Risk Intelligence as product areas for business workflows.",
+    href: "/solutions/businesses",
   },
   {
-    title: "Developers",
+    title: "Fintechs",
     description:
-      "Find information about APIs, integrations and sandbox access. Technical details are published when verified against the backend contract.",
-    href: "/developers",
+      "Discuss how TAMVA's platform may fit your product and integration needs.",
+    href: "/solutions#fintechs",
+  },
+  {
+    title: "Financial institutions",
+    description:
+      "Explore TAMVA's broader product direction for institutional identity and information workflows.",
+    href: "/solutions/organizations",
   },
 ];
 
 const platformAreas = [
   [
-    "Financial identity",
-    "TAMVA App and Financial Passport are being developed for the individual experience.",
+    "For individuals",
+    "TAMVA App and Financial Passport are being developed as part of the consumer experience.",
   ],
   [
-    "Verification",
-    "Structured workflows are part of TAMVA's product direction for organizations.",
+    "For organizations",
+    "Verification and Risk Intelligence describe product areas for businesses and institutions.",
   ],
   [
-    "Risk intelligence",
-    "Relevant information and signals are organized to support review and decisions.",
+    "For developers",
+    "Integration materials are being prepared and will be published when confirmed against the backend contract.",
   ],
 ];
 
@@ -69,13 +75,14 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="The TAMVA platform"
-            title="One platform for people and the organizations around them."
-            description="TAMVA is building connected financial technology for African markets. Ghana is the initial market."
+            title="Financial technology infrastructure for African markets."
+            description="TAMVA is building connected products for people and organizations. Ghana is the initial market, with a broader African outlook."
           />
           <p className="mt-8 max-w-3xl leading-relaxed text-ink-muted">
-            Individuals, businesses, financial institutions and developers have
-            different needs. TAMVA brings its consumer experience and
-            organizational product areas under one broader platform direction.
+            People and organizations need clear, reliable ways to engage with
+            financial services. TAMVA is developing a platform that brings
+            consumer experiences, organizational products and developer
+            integrations under one direction.
           </p>
         </Container>
       </section>
@@ -84,8 +91,8 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="Products"
-            title="Product areas for people and organizations."
-            description="Explore the products being developed across the TAMVA platform."
+            title="Four product areas. One broader platform."
+            description="Explore TAMVA App, Financial Passport, Risk Intelligence and Verification."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {featuredProducts.map((product) => (
@@ -120,9 +127,9 @@ export default function HomePage() {
       <section className="py-16 sm:py-24">
         <Container>
           <SectionHeading
-            eyebrow="How the platform fits together"
-            title="A connected direction across identity, verification and decision support."
-            description="TAMVA's product areas are intended to serve individuals and organizations as part of one financial technology platform."
+            eyebrow="How TAMVA works"
+            title="Connected product areas for different financial needs."
+            description="TAMVA brings an individual experience together with organizational workflows and developer integration information."
           />
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {platformAreas.map(([title, description], index) => (
@@ -149,11 +156,11 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             eyebrow="Who TAMVA serves"
-            title="One platform, designed for different needs."
-            description="The platform includes a consumer experience, product areas for businesses and institutions, and integration information for developers."
+            title="Designed around people and their financial partners."
+            description="TAMVA is building for individuals, businesses, fintechs and financial institutions."
             light
           />
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {audiences.map((audience) => (
               <Link
                 key={audience.title}
@@ -177,48 +184,43 @@ export default function HomePage() {
 
       <section className="py-16 sm:py-24">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-2">
-            <article className="rounded-xl2 border border-surface-border bg-surface-muted p-7 sm:p-9">
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent-600">
-                Trust and responsibility
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold text-primary-900">
-                Clarity, consent and accountability.
-              </h2>
-              <p className="mt-3 leading-relaxed text-ink-muted">
-                These principles guide TAMVA&apos;s approach to financial
-                identity information and decision support. Public technical and
-                certification claims are limited to details that can be verified.
-              </p>
-              <LinkButton href="/trust" variant="ghost" withArrow className="mt-5">
-                Our trust approach
-              </LinkButton>
-            </article>
-            <article className="rounded-xl2 border border-surface-border bg-surface-muted p-7 sm:p-9">
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent-600">
-                For developers
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold text-primary-900">
-                Integration information for the TAMVA platform.
-              </h2>
-              <p className="mt-3 leading-relaxed text-ink-muted">
-                API specifications, integration guides and sandbox availability
-                are being prepared and should be confirmed with the TAMVA team.
-              </p>
-              <LinkButton
-                href="/developers"
-                variant="ghost"
-                withArrow
-                className="mt-5"
-              >
-                Developer information
-              </LinkButton>
-            </article>
+          <SectionHeading
+            eyebrow="Security & trust"
+            title="Clear principles. Careful public claims."
+            description="TAMVA shares trust and security information that can be supported, and identifies areas where details are not yet publicly available."
+          />
+          <div className="mt-8 rounded-xl2 border border-surface-border bg-surface-muted p-7 sm:p-9">
+            <p className="max-w-3xl leading-relaxed text-ink-muted">
+              We aim to make financial identity and information use understandable.
+              Our public trust page describes current disclosures and how to
+              contact the team with questions.
+            </p>
+            <LinkButton href="/trust" variant="ghost" withArrow className="mt-5">
+              Visit Security & Trust
+            </LinkButton>
           </div>
         </Container>
       </section>
 
-      <section className="bg-surface-muted py-16 sm:py-20">
+      <section className="bg-surface-muted py-16 sm:py-24">
+        <Container>
+          <SectionHeading
+            eyebrow="Developers"
+            title="APIs, integrations and documentation."
+            description="Developer information for the TAMVA platform is being prepared. API details and sandbox availability should be confirmed with the team."
+          />
+          <div className="mt-6 flex flex-wrap gap-4">
+            <LinkButton href="/developers" withArrow>
+              Developer documentation
+            </LinkButton>
+            <LinkButton href="/contact" variant="secondary">
+              Ask about sandbox access
+            </LinkButton>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
         <Container>
           <SectionHeading
             eyebrow="Our starting point"
