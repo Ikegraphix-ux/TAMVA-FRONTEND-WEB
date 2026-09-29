@@ -75,14 +75,6 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-4 lg:flex">
-            <button
-              type="button"
-              disabled
-              title="Partner portal link to be confirmed"
-              className="min-h-[44px] cursor-not-allowed px-2 text-sm font-medium text-ink-faint"
-            >
-              Partner Login
-            </button>
             <LinkButton href="/contact">Request Access</LinkButton>
           </div>
 
@@ -118,14 +110,6 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <button
-            type="button"
-            disabled
-            title="Partner portal link to be confirmed"
-            className="mt-6 min-h-[44px] w-full cursor-not-allowed rounded-full border border-surface-border px-6 text-sm font-semibold text-ink-faint"
-          >
-            Partner Login
-          </button>
           <LinkButton href="/contact" className="mt-3 w-full">
             Request Access
           </LinkButton>

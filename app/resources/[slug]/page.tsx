@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getCanonicalAlternates } from "@/lib/site";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -14,6 +15,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const article = articles.find((item) => item.id === params.slug);
   if (!article) return {};
   return {
+    alternates: getCanonicalAlternates(`/resources/${params.slug}`),
     title: article.title,
     description: article.description,
   };

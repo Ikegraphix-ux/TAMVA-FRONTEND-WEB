@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+import { getCanonicalAlternates } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: getCanonicalAlternates("/"),
+};
+
 import { Container } from "@/components/Container";
 import { CTA } from "@/components/CTA";
 import { FeatureCard } from "@/components/FeatureCard";

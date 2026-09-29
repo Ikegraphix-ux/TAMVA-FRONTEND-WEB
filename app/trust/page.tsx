@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { getCanonicalAlternates } from "@/lib/site";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
+  alternates: getCanonicalAlternates("/trust"),
   title: "Security",
   description: "How TAMVA approaches consent, auditability, security and regulatory alignment.",
 };

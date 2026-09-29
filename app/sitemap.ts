@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 import { products, solutions } from "@/lib/content";
-import { getSiteUrl } from "@/lib/site";
+import { getSiteUrl, isIndexingEnabled } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (!isIndexingEnabled()) return [];
+
   const siteUrl = getSiteUrl().origin;
 
   const staticRoutes = [

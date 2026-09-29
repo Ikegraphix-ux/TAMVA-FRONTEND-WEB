@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { getCanonicalAlternates } from "@/lib/site";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
+  alternates: getCanonicalAlternates("/solutions"),
   title: "Solutions",
   description: "Explainable transaction-risk infrastructure for the institutions that move Africa's money.",
 };

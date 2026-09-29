@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { getSiteUrl } from "@/lib/site";
+import { getRobotsPolicy, getSiteUrl } from "@/lib/site";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -32,10 +32,7 @@ export const metadata: Metadata = {
     description:
       "Explainable transaction-risk decisions and consent-aware financial data for institutions. Built in Ghana, designed for Africa.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: getRobotsPolicy(),
 };
 
 export default function RootLayout({

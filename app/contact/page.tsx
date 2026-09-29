@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getCanonicalAlternates } from "@/lib/site";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -6,6 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Icon } from "@/components/Icon";
 
 export const metadata: Metadata = {
+  alternates: getCanonicalAlternates("/contact"),
   title: "Contact",
   description: "Contact TAMVA about partnerships, sandbox access and press enquiries.",
 };

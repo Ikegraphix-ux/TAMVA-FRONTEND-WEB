@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getCanonicalAlternates } from "@/lib/site";
 import { notFound } from "next/navigation";
 import { ProductDetailTemplate } from "@/components/ProductDetailTemplate";
 import { fetchProduct } from "@/services/products";
@@ -6,6 +7,7 @@ import { fetchProduct } from "@/services/products";
 export async function generateMetadata(): Promise<Metadata> {
   const product = await fetchProduct("passport");
   return {
+    alternates: getCanonicalAlternates("/products/passport"),
     title: product?.name ?? "Product",
     description: product?.description,
   };

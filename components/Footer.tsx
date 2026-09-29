@@ -3,11 +3,26 @@ import { Container } from "./Container";
 
 const columns: { title: string; links: { label: string; href: string }[] }[] = [
   {
-    title: "Product",
+    title: "Products",
     links: [
-      { label: "Risk API", href: "/products#risk-decision-api" },
-      { label: "Rules Engine", href: "/products#rules-engine" },
-      { label: "Data Connectivity", href: "/products#data-connectivity" },
+      { label: "Financial Passport", href: "/products/passport" },
+      { label: "Risk Intelligence", href: "/products/risk-intelligence" },
+      { label: "Verification", href: "/products/verification" },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      { label: "Financial Institutions", href: "/solutions/organizations" },
+      { label: "Businesses", href: "/solutions/businesses" },
+      { label: "Individuals", href: "/solutions/individuals" },
+    ],
+  },
+  {
+    title: "Developers",
+    links: [
+      { label: "Documentation", href: "/resources" },
+      { label: "Sandbox Access", href: "/contact" },
     ],
   },
   {
@@ -19,21 +34,8 @@ const columns: { title: string; links: { label: string; href: string }[] }[] = [
     ],
   },
   {
-    title: "Resources",
-    links: [
-      { label: "Docs", href: "/resources" },
-      { label: "API Reference", href: "/resources#api-reference" },
-      { label: "Guides", href: "/resources#guides" },
-      { label: "FAQs", href: "/resources#faqs" },
-    ],
-  },
-  {
     title: "Trust & Legal",
-    links: [
-      { label: "Security", href: "/trust" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-    ],
+    links: [{ label: "Security", href: "/trust" }],
   },
 ];
 
@@ -41,7 +43,7 @@ export function Footer() {
   return (
     <footer className="border-t border-surface-border bg-primary-900 text-primary-100">
       <Container className="py-14 sm:py-16">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <Link href="/" className="text-lg font-bold text-white">
               TAMVA
@@ -78,4 +80,3 @@ export function Footer() {
     </footer>
   );
 }
-
