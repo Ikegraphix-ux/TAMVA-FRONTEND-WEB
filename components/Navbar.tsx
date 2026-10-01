@@ -52,7 +52,7 @@ export function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group" aria-label="TAMVA Home">
+        <Link href="/" className="flex items-center gap-3 group shrink-0" aria-label="TAMVA Home">
           <svg className="w-8 h-8 text-tamva-accent transition-transform group-hover:scale-105" viewBox="0 0 36 36" fill="none">
             <path d="M7 11L18 4L29 11L18 18L7 11Z" fill="#00E676" />
             <path d="M7 18L18 25L29 18L18 11L7 18Z" fill="#00df82" opacity="0.8" />
@@ -63,8 +63,8 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Primary Navigation Links */}
-        <nav aria-label="Primary" className="hidden md:flex items-center space-x-8 text-[14px] font-medium text-slate-300">
+        {/* Primary Navigation Links — visible on lg (1024px+) screens */}
+        <nav aria-label="Primary" className="hidden lg:flex items-center space-x-7 text-[14px] font-medium text-slate-300">
           {navLinks.map((item) => {
             const active = isActive(item.href);
             return (
@@ -114,10 +114,10 @@ export function Navbar() {
             Get Started
           </Link>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile/Tablet Hamburger Menu Button — visible up to lg (1023px) */}
           <button
             type="button"
-            className="md:hidden flex h-10 w-10 items-center justify-center rounded-lg text-slate-300 hover:text-white"
+            className="lg:hidden flex h-10 w-10 items-center justify-center rounded-lg text-slate-300 hover:text-white"
             aria-expanded={isOpen}
             aria-controls="mobile-nav"
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -136,10 +136,10 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile/Tablet Drawer Menu */}
       <div
         id="mobile-nav"
-        className={`fixed inset-x-0 top-20 bottom-0 z-40 bg-[#021812] border-t border-[#0d382b] overflow-y-auto transition-transform duration-200 ease-out md:hidden ${
+        className={`fixed inset-x-0 top-20 bottom-0 z-40 bg-[#021812] border-t border-[#0d382b] overflow-y-auto transition-transform duration-200 ease-out lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
         }`}
       >

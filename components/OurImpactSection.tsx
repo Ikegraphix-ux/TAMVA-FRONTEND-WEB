@@ -15,14 +15,14 @@ export function OurImpactSection() {
               Building a more inclusive financial future
             </h2>
             <p className="text-slate-300 text-sm leading-relaxed">
-              TAMVA is more than a platform — it&apos;s a movement to expand financial access,
-              create opportunities and empower communities across Africa.
+              TAMVA is more than a platform — it&apos;s a mission to expand financial access,
+              create opportunities and empower communities across African markets.
             </p>
           </div>
 
-          {/* Impact Metrics 2x2 Grid */}
+          {/* Impact Pillars 2x2 Grid */}
           <div className="lg:col-span-4 grid grid-cols-2 gap-6">
-            {/* Metric 1 */}
+            {/* Pillar 1 */}
             <div className="space-y-2">
               <div className="w-8 h-8 rounded-lg bg-tamva-accent/10 text-tamva-accent flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,13 +34,13 @@ export function OurImpactSection() {
                   />
                 </svg>
               </div>
-              <div className="text-3xl font-extrabold text-white">1M+</div>
+              <div className="text-xl font-extrabold text-white">Financial Access</div>
               <p className="text-xs text-slate-300 leading-normal">
-                People to be reached in the first year
+                Expanding inclusive financial tools for individuals and businesses
               </p>
             </div>
 
-            {/* Metric 2 */}
+            {/* Pillar 2 */}
             <div className="space-y-2">
               <div className="w-8 h-8 rounded-lg bg-tamva-accent/10 text-tamva-accent flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,13 +52,13 @@ export function OurImpactSection() {
                   />
                 </svg>
               </div>
-              <div className="text-3xl font-extrabold text-white">99.9%</div>
+              <div className="text-xl font-extrabold text-white">Connected</div>
               <p className="text-xs text-slate-300 leading-normal">
-                System uptime and reliability
+                Connecting consumer experiences with organizational workflows
               </p>
             </div>
 
-            {/* Metric 3 */}
+            {/* Pillar 3 */}
             <div className="space-y-2">
               <div className="w-8 h-8 rounded-lg bg-tamva-accent/10 text-tamva-accent flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,13 +70,13 @@ export function OurImpactSection() {
                   />
                 </svg>
               </div>
-              <div className="text-2xl font-extrabold text-white">Bank-grade</div>
+              <div className="text-xl font-extrabold text-white">Security &amp; Trust</div>
               <p className="text-xs text-slate-300 leading-normal">
-                Security &amp; compliance standards
+                Principled data protection built around user choice and consent
               </p>
             </div>
 
-            {/* Metric 4 */}
+            {/* Pillar 4 */}
             <div className="space-y-2">
               <div className="w-8 h-8 rounded-lg bg-tamva-accent/10 text-tamva-accent flex items-center justify-center">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,9 +88,9 @@ export function OurImpactSection() {
                   />
                 </svg>
               </div>
-              <div className="text-2xl font-extrabold text-white">Pan-African</div>
+              <div className="text-xl font-extrabold text-white">Pan-African</div>
               <p className="text-xs text-slate-300 leading-normal">
-                Built for Africa, ready for global growth
+                Built in Ghana, designed for regional expansion
               </p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export function OurImpactSection() {
                 <line x1="140" y1="150" x2="180" y2="220" stroke="#00e676" strokeOpacity="0.5" strokeWidth="1.2" />
                 <line x1="180" y1="220" x2="160" y2="280" stroke="#00e676" strokeOpacity="0.8" strokeWidth="1.5" />
 
-                {/* Glowing Node Dots (Major African hubs: Accra, Lagos, Nairobi, Johannesburg, Cairo, Dakar) */}
+                {/* Glowing Node Dots */}
                 <circle cx="160" cy="100" r="4" fill="#00e676" className="glow-dot" />
                 <circle cx="80" cy="140" r="3.5" fill="#00e676" />
                 <circle cx="140" cy="150" r="5" fill="#ffffff" stroke="#00e676" strokeWidth="2" className="glow-dot" />

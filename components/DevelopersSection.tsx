@@ -15,7 +15,7 @@ export function DevelopersSection() {
     eventId: string;
     timestamp: string;
   }>({
-    eventId: "evt_90248201a4",
+    eventId: "evt_preview_90248201a4",
     timestamp: "2025-05-18T10:45:14.102Z",
   });
 
@@ -31,7 +31,7 @@ export function DevelopersSection() {
     setSimulating(true);
     setTimeout(() => {
       const now = new Date().toISOString();
-      const randomId = "evt_" + Math.random().toString(36).substring(2, 10);
+      const randomId = "evt_preview_" + Math.random().toString(36).substring(2, 10);
       setSimulatedPayload({
         eventId: randomId,
         timestamp: now,
@@ -42,7 +42,7 @@ export function DevelopersSection() {
 
   return (
     <section className="py-20 bg-[#fafcfb]" id="docs">
-      <div className="max-w-[1400px] mx-auto px-6 space-y-10">
+      <div className="max-w-[1400px] mx-auto px-6 space-y-8">
         {/* Header & Overview Block with Tab Navigation */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2 border-b border-slate-200">
           <div className="max-w-2xl">
@@ -51,15 +51,14 @@ export function DevelopersSection() {
                 DEVELOPERS &amp; INTEGRATION
               </span>
               <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
-                v2.4 Live
+                Developer Preview
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2 tracking-tight">
               Explore Our Documentation
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 leading-relaxed">
-              Integrate pan-African financial rails, mobile money payments, and instant payouts in
-              minutes with developer-first tools.
+              Explore planned developer tools, integration workflows, and API architectures designed for African financial connectivity.
             </p>
           </div>
 
@@ -69,7 +68,7 @@ export function DevelopersSection() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#021812] hover:bg-black text-tamva-accent border border-tamva-accent/40 font-semibold text-xs px-5 py-2.5 rounded-full transition-all shadow-sm"
             >
-              <span>Get API Keys</span>
+              <span>Ask About Sandbox</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
               </svg>
@@ -78,9 +77,20 @@ export function DevelopersSection() {
               href="/developers"
               className="inline-flex items-center gap-2 bg-tamva-accent hover:bg-emerald-400 text-black font-bold text-xs px-5 py-2.5 rounded-full transition-all shadow-[0_0_15px_rgba(0,230,118,0.25)]"
             >
-              <span>View Full Docs</span>
+              <span>View Documentation Map</span>
               <span>→</span>
             </Link>
+          </div>
+        </div>
+
+        {/* Informational Preview Notice */}
+        <div className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-4 text-xs text-emerald-900 flex items-start gap-3">
+          <span className="text-base shrink-0">ℹ️</span>
+          <div>
+            <p className="font-semibold">Integration Direction &amp; Preview</p>
+            <p className="text-emerald-800 mt-0.5 leading-relaxed">
+              The examples below illustrate TAMVA&apos;s planned developer architecture. Specifications and sandbox availability are being prepared and will be verified against the backend contract prior to public release.
+            </p>
           </div>
         </div>
 
@@ -98,7 +108,7 @@ export function DevelopersSection() {
             }`}
           >
             <span>&lt;/&gt;</span>
-            <span>API Docs</span>
+            <span>API Architecture</span>
           </button>
 
           <button
@@ -128,7 +138,7 @@ export function DevelopersSection() {
             }`}
           >
             <span>📦</span>
-            <span>SDKs &amp; Libraries</span>
+            <span>SDK Libraries</span>
           </button>
 
           <button
@@ -158,7 +168,7 @@ export function DevelopersSection() {
             }`}
           >
             <span>💬</span>
-            <span>User Guides &amp; FAQs</span>
+            <span>Guides &amp; FAQs</span>
           </button>
         </div>
 
@@ -173,18 +183,17 @@ export function DevelopersSection() {
                   <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-[11px] font-bold tracking-wider uppercase text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-                        REST API v1
+                        Planned Schema
                       </span>
                       <span className="text-xs text-slate-400 font-mono">
                         Base: https://api.tamva.com/v1
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-slate-900">
-                      Instant Payments &amp; Transfers
+                      Multi-Rail Transfer Architecture
                     </h3>
                     <p className="text-xs text-slate-600 leading-relaxed">
-                      Initiate instant multi-currency transfers across MTN Mobile Money, Vodafone Cash,
-                      AirtelTigo, and African local bank networks with single-call idempotency.
+                      Conceptual endpoint structure for handling cross-rail transactions, mobile money integration, and payout execution.
                     </p>
                     <div className="space-y-2 pt-2 text-xs">
                       <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-100">
@@ -194,7 +203,7 @@ export function DevelopersSection() {
                           </span>
                           <span className="text-slate-800 font-semibold">/v1/transfers</span>
                         </div>
-                        <span className="text-[11px] text-slate-500">Initiate Payout</span>
+                        <span className="text-[11px] text-slate-500">Initiate Transfer</span>
                       </div>
 
                       <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-100">
@@ -221,21 +230,21 @@ export function DevelopersSection() {
                     <div className="grid grid-cols-3 gap-2 pt-2 text-center text-xs">
                       <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                         <span className="block text-[10px] text-slate-400 uppercase font-semibold">
-                          Auth
+                          Auth Model
                         </span>
                         <span className="font-bold text-slate-800">Bearer Token</span>
                       </div>
                       <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                         <span className="block text-[10px] text-slate-400 uppercase font-semibold">
-                          Latency
+                          Format
                         </span>
-                        <span className="font-bold text-emerald-600">&lt; 140ms</span>
+                        <span className="font-bold text-emerald-600">JSON REST</span>
                       </div>
                       <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                         <span className="block text-[10px] text-slate-400 uppercase font-semibold">
-                          Rate Limit
+                          Status
                         </span>
-                        <span className="font-bold text-slate-800">500 req/min</span>
+                        <span className="font-bold text-slate-800">Preview</span>
                       </div>
                     </div>
                   </div>
@@ -247,8 +256,8 @@ export function DevelopersSection() {
                         🔒
                       </div>
                       <div>
-                        <p className="text-xs font-bold text-slate-900">HMAC-SHA256</p>
-                        <p className="text-[10px] text-slate-500">Signed payloads</p>
+                        <p className="text-xs font-bold text-slate-900">Signed Payloads</p>
+                        <p className="text-[10px] text-slate-500">Cryptographic headers</p>
                       </div>
                     </div>
                     <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3">
@@ -256,8 +265,8 @@ export function DevelopersSection() {
                         ⚡
                       </div>
                       <div>
-                        <p className="text-xs font-bold text-slate-900">Sandbox Mode</p>
-                        <p className="text-[10px] text-slate-500">Mock transfers instantly</p>
+                        <p className="text-xs font-bold text-slate-900">Sandbox Preview</p>
+                        <p className="text-[10px] text-slate-500">Available on request</p>
                       </div>
                     </div>
                   </div>
@@ -274,7 +283,7 @@ export function DevelopersSection() {
                         <span className="w-3 h-3 rounded-full bg-emerald-500 inline-block" />
                       </div>
                       <span className="text-xs font-mono text-slate-300 font-semibold">
-                        POST /v1/transfers
+                        POST /v1/transfers (Example)
                       </span>
                     </div>
 
@@ -321,9 +330,9 @@ export function DevelopersSection() {
                     {codeLang === "curl" && (
                       <pre className="text-slate-200">
                         <code>
-                          <span className="text-slate-500"># 1. Send mobile money transfer request</span>
+                          <span className="text-slate-500"># Conceptual transfer request example</span>
                           {"\n"}curl -X POST https://api.tamva.com/v1/transfers \{"\n"}  -H{" "}
-                          <span className="text-tamva-accent">&quot;Authorization: Bearer sec_live_948f2c...&quot;</span> \
+                          <span className="text-tamva-accent">&quot;Authorization: Bearer sec_preview_...&quot;</span> \
                           {"\n"}  -H <span className="text-tamva-accent">&quot;Content-Type: application/json&quot;</span> \
                           {"\n"}  -d <span className="text-emerald-300">
                             {`'{\n    "source": "balance_ghs",\n    "amount": 25000,\n    "currency": "GHS",\n    "recipient": {\n      "type": "mobile_money",\n      "provider": "MTN",\n      "phone": "+233244123456",\n      "name": "Kofi Mensah"\n    },\n    "reference": "TAM-TRF-982104"\n  }'`}
@@ -335,11 +344,11 @@ export function DevelopersSection() {
                     {codeLang === "python" && (
                       <pre className="text-slate-200">
                         <code>
-                          <span className="text-slate-500"># Using official tamva-python SDK</span>
+                          <span className="text-slate-500"># Conceptual Python SDK usage</span>
                           {"\n"}
                           <span className="text-purple-400">import</span> tamva
                           {"\n\n"}client = tamva.Client(api_key=
-                          <span className="text-tamva-accent">&quot;sec_live_948f2c...&quot;</span>)
+                          <span className="text-tamva-accent">&quot;sec_preview_...&quot;</span>)
                           {"\n\n"}transfer = client.transfers.create(
                           {"\n"}    amount=<span className="text-amber-300">250.00</span>,
                           {"\n"}    currency=<span className="text-emerald-300">&quot;GHS&quot;</span>,
@@ -354,8 +363,7 @@ export function DevelopersSection() {
                           {"\n"}    reference=<span className="text-emerald-300">&quot;TAM-TRF-982104&quot;</span>
                           {"\n"})
                           {"\n"}
-                          <span className="text-purple-400">print</span>(transfer.status){" "}
-                          <span className="text-slate-500"># &apos;completed&apos;</span>
+                          <span className="text-purple-400">print</span>(transfer.status)
                         </code>
                       </pre>
                     )}
@@ -363,15 +371,15 @@ export function DevelopersSection() {
                     {codeLang === "node" && (
                       <pre className="text-slate-200">
                         <code>
-                          <span className="text-slate-500">{"// Using @tamva/node library"}</span>
+                          <span className="text-slate-500">{"// Conceptual Node.js client usage"}</span>
                           {"\n"}
                           <span className="text-purple-400">const</span> &#123; Tamva &#125; ={" "}
                           <span className="text-purple-400">require</span>(
-                          <span className="text-emerald-300">&apos;@tamva/node&apos;</span>);
+                          <span className="text-emerald-300">&apos;@tamva/sdk&apos;</span>);
                           {"\n"}
                           <span className="text-purple-400">const</span> tamva ={" "}
                           <span className="text-purple-400">new</span> Tamva(&#123; apiKey:{" "}
-                          <span className="text-tamva-accent">&apos;sec_live_948f2c...&apos;</span> &#125;);
+                          <span className="text-tamva-accent">&apos;sec_preview_...&apos;</span> &#125;);
                           {"\n\n"}
                           <span className="text-purple-400">const</span> payout ={" "}
                           <span className="text-purple-400">await</span> tamva.transfers.create(&#123;
@@ -390,17 +398,17 @@ export function DevelopersSection() {
                     )}
                   </div>
 
-                  {/* Live API Response Preview Box */}
+                  {/* Schema Response Preview Box */}
                   <div className="p-5 bg-[#011610] font-mono text-xs">
                     <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#0d382b]/80">
                       <div className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="w-2 h-2 rounded-full bg-emerald-400" />
                         <span className="text-[11px] uppercase tracking-wider text-slate-400 font-bold">
-                          Live Response (200 OK)
+                          Sample Response Structure
                         </span>
                       </div>
                       <span className="text-[10px] text-tamva-accent font-semibold bg-emerald-950/60 border border-emerald-500/20 px-2 py-0.5 rounded">
-                        Execution: 122ms
+                        200 OK Example
                       </span>
                     </div>
                     <pre className="text-slate-300 text-[11px] leading-relaxed overflow-x-auto code-scroll">
@@ -437,27 +445,26 @@ export function DevelopersSection() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700">
-                      Quickstart
+                      Planned Topic
                     </span>
-                    <span className="text-xs text-slate-400">⏱ 5 min read</span>
+                    <span className="text-xs text-slate-400">Quickstart</span>
                   </div>
                   <h3 className="text-lg font-bold text-slate-900">
-                    Accept Mobile Money in 5 Minutes
+                    Mobile Money Integration Concepts
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Step-by-step tutorial to generate payment prompts for MTN MoMo, Vodafone Cash, and
-                    AirtelTigo with zero redirect drops.
+                    Overview of planned payment collection workflows across major mobile network operators in West Africa.
                   </p>
                   <div className="pt-2 flex items-center gap-2 text-[11px] text-slate-500 font-mono">
-                    <span className="bg-slate-100 px-2 py-0.5 rounded">SDK v2</span>
                     <span className="bg-slate-100 px-2 py-0.5 rounded">REST</span>
+                    <span className="bg-slate-100 px-2 py-0.5 rounded">MoMo</span>
                   </div>
                 </div>
                 <div className="pt-5 border-t border-slate-100 mt-4 flex items-center justify-between">
                   <Link href="/developers" className="text-xs font-semibold text-emerald-600 hover:underline">
-                    Begin tutorial →
+                    View in doc map →
                   </Link>
-                  <span className="text-xs text-slate-400">Beginner</span>
+                  <span className="text-xs text-slate-400">Overview</span>
                 </div>
               </div>
 
@@ -466,16 +473,15 @@ export function DevelopersSection() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700">
-                      Payouts
+                      Planned Topic
                     </span>
-                    <span className="text-xs text-slate-400">⏱ 8 min read</span>
+                    <span className="text-xs text-slate-400">Payouts</span>
                   </div>
                   <h3 className="text-lg font-bold text-slate-900">
-                    Automate Instant Bulk Payouts
+                    Automated Batch Disbursements
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Disburse salaries, vendor settlements, and contractor disbursements
-                    programmatically with smart retry policies and batching.
+                    Architectural design for disbursing settlements, vendor payments, and recurring payrolls programmatically.
                   </p>
                   <div className="pt-2 flex items-center gap-2 text-[11px] text-slate-500 font-mono">
                     <span className="bg-slate-100 px-2 py-0.5 rounded">Batch API</span>
@@ -484,9 +490,9 @@ export function DevelopersSection() {
                 </div>
                 <div className="pt-5 border-t border-slate-100 mt-4 flex items-center justify-between">
                   <Link href="/developers" className="text-xs font-semibold text-emerald-600 hover:underline">
-                    Begin tutorial →
+                    View in doc map →
                   </Link>
-                  <span className="text-xs text-slate-400">Intermediate</span>
+                  <span className="text-xs text-slate-400">Overview</span>
                 </div>
               </div>
 
@@ -495,27 +501,26 @@ export function DevelopersSection() {
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-purple-50 text-purple-700">
-                      Security
+                      Planned Topic
                     </span>
-                    <span className="text-xs text-slate-400">⏱ 6 min read</span>
+                    <span className="text-xs text-slate-400">Security</span>
                   </div>
                   <h3 className="text-lg font-bold text-slate-900">
-                    Signature Verification &amp; Security
+                    Webhook Verification &amp; Security
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    Verify cryptographic `X-TAMVA-Signature` headers, manage rotation keys, and
-                    protect your endpoints against replay attacks.
+                    Guidelines for verifying cryptographic payload signatures and safeguarding listener endpoints.
                   </p>
                   <div className="pt-2 flex items-center gap-2 text-[11px] text-slate-500 font-mono">
                     <span className="bg-slate-100 px-2 py-0.5 rounded">HMAC-SHA256</span>
-                    <span className="bg-slate-100 px-2 py-0.5 rounded">Zero-Trust</span>
+                    <span className="bg-slate-100 px-2 py-0.5 rounded">Signing</span>
                   </div>
                 </div>
                 <div className="pt-5 border-t border-slate-100 mt-4 flex items-center justify-between">
                   <Link href="/developers" className="text-xs font-semibold text-emerald-600 hover:underline">
-                    Begin tutorial →
+                    View in doc map →
                   </Link>
-                  <span className="text-xs text-slate-400">Advanced</span>
+                  <span className="text-xs text-slate-400">Overview</span>
                 </div>
               </div>
             </div>
@@ -529,20 +534,20 @@ export function DevelopersSection() {
                 <div className="flex items-center justify-between">
                   <span className="text-2xl">⚡</span>
                   <span className="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">
-                    v3.1.0
+                    Planned
                   </span>
                 </div>
                 <h4 className="font-bold text-slate-900 text-sm">Node.js &amp; TypeScript</h4>
                 <p className="text-xs text-slate-500">
-                  Official library with complete typing, automated retries and Promise wrappers.
+                  Client library structure with complete type declarations and Promise wrappers.
                 </p>
                 <div className="bg-slate-900 text-tamva-accent font-mono text-[11px] p-2.5 rounded-xl flex items-center justify-between">
-                  <code>npm i @tamva/sdk</code>
+                  <code>@tamva/sdk</code>
                   <button
                     type="button"
-                    onClick={() => handleCopy("npm i @tamva/sdk", "node")}
+                    onClick={() => handleCopy("@tamva/sdk", "node")}
                     className="text-slate-400 hover:text-white cursor-pointer text-xs ml-2"
-                    title="Copy command"
+                    title="Copy name"
                   >
                     {copiedSdk === "node" ? "✓" : "📋"}
                   </button>
@@ -554,20 +559,20 @@ export function DevelopersSection() {
                 <div className="flex items-center justify-between">
                   <span className="text-2xl">🐍</span>
                   <span className="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">
-                    v2.4.2
+                    Planned
                   </span>
                 </div>
                 <h4 className="font-bold text-slate-900 text-sm">Python</h4>
                 <p className="text-xs text-slate-500">
-                  Sync &amp; Async clients built for Django, FastAPI, and Flask fintech platforms.
+                  Planned Python package supporting synchronous and asynchronous client workflows.
                 </p>
                 <div className="bg-slate-900 text-tamva-accent font-mono text-[11px] p-2.5 rounded-xl flex items-center justify-between">
-                  <code>pip install tamva</code>
+                  <code>tamva-python</code>
                   <button
                     type="button"
-                    onClick={() => handleCopy("pip install tamva", "python")}
+                    onClick={() => handleCopy("tamva-python", "python")}
                     className="text-slate-400 hover:text-white cursor-pointer text-xs ml-2"
-                    title="Copy command"
+                    title="Copy name"
                   >
                     {copiedSdk === "python" ? "✓" : "📋"}
                   </button>
@@ -579,20 +584,20 @@ export function DevelopersSection() {
                 <div className="flex items-center justify-between">
                   <span className="text-2xl">🐘</span>
                   <span className="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">
-                    v2.0.1
+                    Planned
                   </span>
                 </div>
                 <h4 className="font-bold text-slate-900 text-sm">PHP &amp; Laravel</h4>
                 <p className="text-xs text-slate-500">
-                  Native package with Laravel service providers, facades, and webhook controllers.
+                  Planned PHP package with Laravel integration helpers and webhook handling.
                 </p>
                 <div className="bg-slate-900 text-tamva-accent font-mono text-[11px] p-2.5 rounded-xl flex items-center justify-between">
-                  <code>composer req tamva/tamva-php</code>
+                  <code>tamva-php</code>
                   <button
                     type="button"
-                    onClick={() => handleCopy("composer req tamva/tamva-php", "php")}
+                    onClick={() => handleCopy("tamva-php", "php")}
                     className="text-slate-400 hover:text-white cursor-pointer text-xs ml-2"
-                    title="Copy command"
+                    title="Copy name"
                   >
                     {copiedSdk === "php" ? "✓" : "📋"}
                   </button>
@@ -604,20 +609,20 @@ export function DevelopersSection() {
                 <div className="flex items-center justify-between">
                   <span className="text-2xl">📱</span>
                   <span className="text-[10px] font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded">
-                    v1.8.0
+                    Planned
                   </span>
                 </div>
-                <h4 className="font-bold text-slate-900 text-sm">React Native / Flutter</h4>
+                <h4 className="font-bold text-slate-900 text-sm">Mobile SDK</h4>
                 <p className="text-xs text-slate-500">
-                  In-app drop-in checkout component supporting Biometrics and USSD handoffs.
+                  Planned mobile client SDK for native and cross-platform mobile frameworks.
                 </p>
                 <div className="bg-slate-900 text-tamva-accent font-mono text-[11px] p-2.5 rounded-xl flex items-center justify-between">
-                  <code>npm i @tamva/react-native</code>
+                  <code>@tamva/react-native</code>
                   <button
                     type="button"
-                    onClick={() => handleCopy("npm i @tamva/react-native", "rn")}
+                    onClick={() => handleCopy("@tamva/react-native", "rn")}
                     className="text-slate-400 hover:text-white cursor-pointer text-xs ml-2"
-                    title="Copy command"
+                    title="Copy name"
                   >
                     {copiedSdk === "rn" ? "✓" : "📋"}
                   </button>
@@ -632,14 +637,13 @@ export function DevelopersSection() {
               <div className="lg:col-span-5 space-y-4">
                 <div className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-3">
                   <span className="text-xs uppercase font-extrabold tracking-wider text-emerald-600 block">
-                    REAL-TIME NOTIFICATIONS
+                    EVENT NOTIFICATIONS
                   </span>
                   <h3 className="text-xl font-bold text-slate-900">
-                    Guaranteed At-Least-Once Delivery
+                    Event-Driven Architecture
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    TAMVA sends webhook events to your HTTP endpoint whenever a transaction is
-                    completed, a customer is verified, or a dispute is registered.
+                    TAMVA&apos;s planned webhook framework is designed to deliver asynchronous event updates whenever transaction or account states change.
                   </p>
                   <div className="space-y-2 pt-2 text-xs">
                     <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl">
@@ -652,7 +656,7 @@ export function DevelopersSection() {
                     </div>
                     <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl">
                       <span className="font-mono font-semibold text-slate-800">customer.verified</span>
-                      <span className="text-emerald-600 text-[11px] font-semibold">KYC completed</span>
+                      <span className="text-emerald-600 text-[11px] font-semibold">Verification event</span>
                     </div>
                   </div>
                   <button
@@ -661,7 +665,7 @@ export function DevelopersSection() {
                     disabled={simulating}
                     className="w-full mt-3 bg-[#021812] hover:bg-black text-tamva-accent text-xs font-bold py-2.5 rounded-full border border-tamva-accent/30 transition-all cursor-pointer shadow-sm disabled:opacity-60"
                   >
-                    {simulating ? "🚀 Dispatching test webhook..." : "⚡ Trigger Test Webhook"}
+                    {simulating ? "🚀 Generating sample payload..." : "⚡ Generate Sample Webhook Event"}
                   </button>
                 </div>
               </div>
@@ -671,7 +675,7 @@ export function DevelopersSection() {
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-tamva-accent animate-pulse" />
                     <span className="text-xs font-mono font-bold text-slate-200">
-                      Webhook Payload Example
+                      Webhook Payload Schema Example
                     </span>
                   </div>
                   <span className="text-[10px] font-mono text-slate-400">Header: X-TAMVA-Signature</span>
@@ -721,15 +725,14 @@ export function DevelopersSection() {
               <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="text-emerald-600 font-bold text-xs bg-emerald-50 px-2 py-0.5 rounded">
-                    Payouts
+                    Integrations
                   </span>
                   <h4 className="font-bold text-slate-900 text-sm">
-                    How fast are Mobile Money payouts settled?
+                    What integration models will TAMVA support?
                   </h4>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Payouts to MTN MoMo, Vodafone Cash, and AirtelTigo across Ghana, Kenya, and Nigeria
-                  settle instantly within 2–10 seconds with automatic retry failover.
+                  TAMVA is designing REST API interfaces and webhook event listeners for mobile money, verification workflows, and business account operations.
                 </p>
               </div>
 
@@ -737,15 +740,14 @@ export function DevelopersSection() {
               <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="text-emerald-600 font-bold text-xs bg-emerald-50 px-2 py-0.5 rounded">
-                    Security
+                    Sandbox
                   </span>
                   <h4 className="font-bold text-slate-900 text-sm">
-                    Do you support sandbox testing without real funds?
+                    How can developers inquire about sandbox access?
                   </h4>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Yes. Every account provides separate Test Keys (`sec_test_...`) and specific phone
-                  numbers to test successful, failed, and pending transaction states instantly.
+                  Sandbox availability is being prepared. Teams interested in early integration discussions can reach out directly to the TAMVA team.
                 </p>
               </div>
 
@@ -753,15 +755,14 @@ export function DevelopersSection() {
               <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="text-emerald-600 font-bold text-xs bg-emerald-50 px-2 py-0.5 rounded">
-                    Compliance
+                    Security &amp; Trust
                   </span>
                   <h4 className="font-bold text-slate-900 text-sm">
-                    What compliance licenses does TAMVA hold?
+                    How does TAMVA approach security and data handling?
                   </h4>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  TAMVA is fully licensed by partner Central Banks, PCI-DSS Level 1 certified, and
-                  complies with ISO 27001 data protection frameworks.
+                  TAMVA follows principled data protection practices with an emphasis on explicit user consent and transparency. Specific compliance details will be published as they are finalized.
                 </p>
               </div>
 
@@ -769,22 +770,21 @@ export function DevelopersSection() {
               <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="text-emerald-600 font-bold text-xs bg-emerald-50 px-2 py-0.5 rounded">
-                    Currencies
+                    Markets
                   </span>
                   <h4 className="font-bold text-slate-900 text-sm">
-                    Which African currencies are currently active?
+                    Which markets is TAMVA focused on initially?
                   </h4>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Currently live for GHS (Ghanaian Cedi), NGN (Nigerian Naira), KES (Kenyan Shilling),
-                  and USD settlement accounts, with XOF/XAF coming in Q3.
+                  Ghana is TAMVA&apos;s initial launch market, with a platform architecture designed for broader expansion across African markets.
                 </p>
               </div>
             </div>
           )}
         </div>
 
-        {/* Bottom Developer Ecosystem Strip (Brand Kit & Portal Access preserved) */}
+        {/* Bottom Developer Ecosystem Strip */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pt-4">
           {/* Quick Developer Links */}
           <div className="md:col-span-8 bg-white rounded-3xl p-6 border border-slate-100 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -794,10 +794,10 @@ export function DevelopersSection() {
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 text-sm">
-                  Ready to integrate TAMVA in production?
+                  Interested in building with TAMVA?
                 </h4>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Explore our interactive Postman collection, OpenAPI specs, and status dashboard.
+                  Explore our documentation map or contact our engineering team to discuss integrations.
                 </p>
               </div>
             </div>
@@ -806,13 +806,13 @@ export function DevelopersSection() {
                 href="/developers"
                 className="text-xs font-semibold text-slate-700 hover:text-emerald-600 border border-slate-200 px-4 py-2 rounded-full transition-colors"
               >
-                OpenAPI 3.0
+                Documentation Map
               </Link>
               <Link
                 href="/contact"
                 className="text-xs font-bold text-[#021812] bg-tamva-accent hover:bg-emerald-400 px-4 py-2 rounded-full transition-colors"
               >
-                Developer Portal →
+                Contact Team →
               </Link>
             </div>
           </div>
