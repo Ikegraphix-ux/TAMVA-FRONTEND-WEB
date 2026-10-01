@@ -9,6 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        tamva: {
+          dark: '#021812',
+          card: '#03231a',
+          accent: '#00e676',
+          mint: '#00df82',
+          lightMint: '#eafbf3',
+          subtle: '#94a3b8',
+          border: '#0d382b',
+          grayLight: '#f8faf9',
+        },
         // Deep blackish-green — matches the TAMVA app's near-black background
         primary: {
           DEFAULT: "#081712",

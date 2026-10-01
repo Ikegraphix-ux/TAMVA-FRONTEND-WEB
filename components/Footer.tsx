@@ -1,93 +1,191 @@
-import Link from "next/link";
-import { Container } from "./Container";
+"use client";
 
-const columns: { title: string; links: { label: string; href: string }[] }[] = [
-  {
-    title: "Products",
-    links: [
-      { label: "TAMVA App", href: "/products/tamva-app" },
-      { label: "Financial Passport", href: "/products/passport" },
-      { label: "Risk Intelligence", href: "/products/risk-intelligence" },
-      { label: "Verification", href: "/products/verification" },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      { label: "Financial Institutions", href: "/solutions/organizations" },
-      { label: "Fintechs", href: "/solutions" },
-      { label: "Businesses", href: "/solutions/businesses" },
-      { label: "Individuals", href: "/solutions/individuals" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [{ label: "Articles & insights", href: "/resources" }],
-  },
-  {
-    title: "Developers",
-    links: [
-      { label: "Documentation", href: "/developers" },
-      { label: "API Reference", href: "/developers#api-reference" },
-      { label: "Quickstart", href: "/developers#quickstart" },
-      { label: "Sandbox access", href: "/contact" },
-      { label: "Changelog", href: "/developers#changelog" },
-      { label: "Status", href: "/developers#status" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "News & Insights", href: "/resources" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "Trust & Legal",
-    links: [{ label: "Security", href: "/trust" }],
-  },
-];
+import Link from "next/link";
+import { useState } from "react";
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email.trim()) {
+      setSubscribed(true);
+      setEmail("");
+      setTimeout(() => setSubscribed(false), 3000);
+    }
+  };
+
   return (
-    <footer className="border-t border-surface-border bg-primary-900 text-primary-100">
-      <Container className="py-14 sm:py-16">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-7">
-          <div className="col-span-2 sm:col-span-3 lg:col-span-1">
-            <Link href="/" className="text-lg font-bold text-white">
-              TAMVA
+    <footer className="bg-[#021812] text-white pt-16 pb-8 border-t border-[#0d382b]">
+      <div className="max-w-[1400px] mx-auto px-6">
+        {/* Top Row: Brand, Navigation columns, Newsletter */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-[#0d382b]">
+          {/* Brand identity */}
+          <div className="lg:col-span-4 space-y-3">
+            <Link href="/" className="flex items-center gap-3">
+              <svg className="w-7 h-7 text-tamva-accent" viewBox="0 0 36 36" fill="none">
+                <path d="M7 11L18 4L29 11L18 18L7 11Z" fill="#00E676" />
+                <path d="M7 18L18 25L29 18L18 11L7 18Z" fill="#00df82" />
+              </svg>
+              <span className="text-xl font-bold tracking-tight text-white uppercase">TAMVA</span>
             </Link>
-            <p className="mt-3 max-w-[220px] text-sm text-primary-300">
-              Your financial identity, everywhere.
-            </p>
-            <p className="mt-4 text-xs font-medium uppercase tracking-wide text-primary-400">
-              Trust infrastructure. Powered by technology.
+            <p className="text-xs text-slate-400 max-w-xs leading-relaxed">
+              Financial inclusion. Powered by technology.
             </p>
           </div>
-          {columns.map((col) => (
-            <nav key={col.title} aria-label={col.title}>
-              <h3 className="text-sm font-semibold text-white">{col.title}</h3>
-              <ul className="mt-4 flex flex-col gap-3">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-primary-300 transition-colors hover:text-white"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
+
+          {/* Product links */}
+          <div className="lg:col-span-2 space-y-2">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase">Product</h4>
+            <ul className="text-xs space-y-2 text-slate-400">
+              <li>
+                <Link href="/products/tamva-app" className="hover:text-tamva-accent transition-colors">
+                  Personal
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions/businesses" className="hover:text-tamva-accent transition-colors">
+                  Business
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions/organizations" className="hover:text-tamva-accent transition-colors">
+                  Institutional
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company links */}
+          <div className="lg:col-span-2 space-y-2">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase">Company</h4>
+            <ul className="text-xs space-y-2 text-slate-400">
+              <li>
+                <Link href="/about" className="hover:text-tamva-accent transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-tamva-accent transition-colors">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-tamva-accent transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources links */}
+          <div className="lg:col-span-2 space-y-2">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase">Resources</h4>
+            <ul className="text-xs space-y-2 text-slate-400">
+              <li>
+                <Link href="/developers" className="hover:text-tamva-accent transition-colors">
+                  Docs
+                </Link>
+              </li>
+              <li>
+                <Link href="/developers#api-reference" className="hover:text-tamva-accent transition-colors">
+                  API Reference
+                </Link>
+              </li>
+              <li>
+                <Link href="/trust" className="hover:text-tamva-accent transition-colors">
+                  Help &amp; Trust Center
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Stay Connected & Newsletter form */}
+          <div className="lg:col-span-2 space-y-4">
+            <h4 className="text-xs font-bold text-white tracking-wider uppercase">Stay connected</h4>
+            {/* Social Icons */}
+            <div className="flex items-center space-x-3 text-slate-400 text-sm">
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X"
+                className="hover:text-tamva-accent transition-colors"
+              >
+                𝕏
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="hover:text-tamva-accent transition-colors"
+              >
+                in
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube"
+                className="hover:text-tamva-accent transition-colors"
+              >
+                ▶
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="hover:text-tamva-accent transition-colors"
+              >
+                
+              </a>
+            </div>
+
+            {/* Newsletter Input Form */}
+            <form onSubmit={handleSubscribe} className="flex items-center rounded-full bg-white/5 border border-white/10 p-1 focus-within:border-tamva-accent">
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="bg-transparent text-xs text-white placeholder-slate-500 px-3 py-1.5 focus:outline-none w-full"
+              />
+              <button
+                type="submit"
+                className="bg-tamva-accent hover:bg-emerald-400 text-[#021812] text-xs font-bold px-3 py-1.5 rounded-full shrink-0 transition-colors"
+              >
+                {subscribed ? "✓" : "Subscribe"}
+              </button>
+            </form>
+            {subscribed && (
+              <p className="text-[10px] text-tamva-accent font-medium">Thank you for subscribing!</p>
+            )}
+          </div>
         </div>
-        <div className="mt-12 border-t border-white/10 pt-6 text-sm text-primary-400">
-          © {new Date().getFullYear()} TAMVA. All rights reserved.
+
+        {/* Bottom Row: Copyright & Legal Policies */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <div>© {new Date().getFullYear()} TAMVA. All rights reserved.</div>
+          <div className="flex items-center space-x-6">
+            <Link href="/trust" className="hover:text-slate-300 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/trust" className="hover:text-slate-300 transition-colors">
+              Terms of Service
+            </Link>
+            <button
+              type="button"
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Cookie Settings
+            </button>
+          </div>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }

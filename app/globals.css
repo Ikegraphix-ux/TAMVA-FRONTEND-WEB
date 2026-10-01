@@ -41,9 +41,33 @@ body {
 }
 
 ::selection {
-  background-color: theme("colors.accent.100");
-  color: theme("colors.primary.900");
+  background-color: #00e676;
+  color: #021812;
 }
+
+/* Geometric mesh gradient background */
+.hero-pattern {
+  background-color: #021a14;
+  background-image: 
+    radial-gradient(circle at 75% 30%, rgba(0, 230, 118, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(0, 223, 130, 0.08) 0%, transparent 40%);
+}
+
+/* African Network Map Custom Canvas / Overlay styles */
+.glow-dot {
+  filter: drop-shadow(0 0 6px #00e676);
+}
+
+/* Code scrollbars */
+.code-scroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.code-scroll::-webkit-scrollbar-thumb {
+  background: #0d382b;
+  border-radius: 4px;
+}
+
 
 /* Visible, high-contrast focus ring for keyboard users */
 :focus-visible {
