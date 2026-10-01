@@ -363,7 +363,7 @@ export function DevelopersSection() {
                     {codeLang === "node" && (
                       <pre className="text-slate-200">
                         <code>
-                          <span className="text-slate-500">// Using @tamva/node library</span>
+                          <span className="text-slate-500">{"// Using @tamva/node library"}</span>
                           {"\n"}
                           <span className="text-purple-400">const</span> &#123; Tamva &#125; ={" "}
                           <span className="text-purple-400">require</span>(
