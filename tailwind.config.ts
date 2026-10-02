@@ -1,3 +1,4 @@
+// @ts-ignore: Suppress IDE resolution error for symlinked tailwindcss types
 import type { Config } from "tailwindcss";
 
 const config: Config = {
