@@ -7,8 +7,7 @@ export async function fetchProducts(): Promise<ProductDetail[]> {
   try {
     return await apiRequest<ProductDetail[]>("/public/products");
   } catch (error) {
-    if (error instanceof ApiError && error.status === 404) return products;
-    throw error;
+    return products;
   }
 }
 
@@ -17,7 +16,6 @@ export async function fetchProduct(slug: string): Promise<ProductDetail | undefi
   try {
     return await apiRequest<ProductDetail>(`/public/products/${slug}`);
   } catch (error) {
-    if (error instanceof ApiError && error.status === 404) return getLocalProduct(slug);
-    throw error;
+    return getLocalProduct(slug);
   }
 }

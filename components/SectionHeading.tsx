@@ -3,7 +3,7 @@ export function SectionHeading({
   title,
   description,
   align = "left",
-  light = false,
+  light = true,
 }: {
   eyebrow?: string;
   title: string;
@@ -13,28 +13,28 @@ export function SectionHeading({
 }) {
   return (
     <div
-      className={`max-w-2xl ${align === "center" ? "mx-auto text-center" : "text-left"}`}
+      className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : "text-left"}`}
     >
       {eyebrow && (
         <p
-          className={`mb-3 text-sm font-semibold uppercase tracking-wide ${
-            light ? "text-accent-300" : "text-accent-600"
+          className={`mb-3 text-xs sm:text-sm font-bold uppercase tracking-wider ${
+            light ? "text-tamva-accent" : "text-emerald-600"
           }`}
         >
           {eyebrow}
         </p>
       )}
       <h2
-        className={`text-h2-mobile sm:text-h2 font-semibold ${
-          light ? "text-white" : "text-primary-900"
+        className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight ${
+          light ? "text-white" : "text-slate-900"
         }`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-4 text-lg leading-relaxed ${
-            light ? "text-primary-100" : "text-ink-muted"
+          className={`mt-4 text-base sm:text-lg leading-relaxed ${
+            light ? "text-slate-300" : "text-slate-600"
           }`}
         >
           {description}
