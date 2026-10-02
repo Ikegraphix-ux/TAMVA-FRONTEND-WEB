@@ -13,15 +13,15 @@ interface BaseProps {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-accent-500 text-white hover:bg-accent-600 active:bg-accent-700 shadow-sm",
+    "bg-tamva-accent text-[#021812] font-bold hover:bg-emerald-400 active:bg-emerald-500 shadow-[0_0_20px_rgba(0,230,118,0.25)] hover:scale-[1.02]",
   secondary:
-    "bg-transparent text-white border border-white/30 hover:bg-white/10 active:bg-white/15",
+    "bg-white/5 text-white border border-white/20 hover:border-tamva-accent/60 hover:bg-white/10 active:bg-white/15",
   ghost:
-    "bg-transparent text-primary-900 border border-surface-border hover:bg-surface-muted active:bg-surface-subtle",
+    "bg-[#03231a] text-tamva-accent border border-[#0d382b] hover:border-tamva-accent/50 hover:bg-[#042d22] active:bg-[#03231a]",
 };
 
 const base =
-  "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-6 text-[15px] font-semibold transition-colors duration-200 ease-out cursor-pointer disabled:cursor-not-allowed disabled:opacity-50";
+  "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-6 text-[14px] sm:text-[15px] font-semibold transition-all duration-200 ease-out cursor-pointer disabled:cursor-not-allowed disabled:opacity-50";
 
 export function LinkButton({
   href,

@@ -24,7 +24,7 @@ export async function apiRequest<T>(path: string, options: RequestOptions = {}):
     throw new ApiError("NEXT_PUBLIC_API_URL is not configured.");
   }
 
-  const { timeoutMs = 10_000, ...init } = options;
+  const { timeoutMs = 2_500, ...init } = options;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
