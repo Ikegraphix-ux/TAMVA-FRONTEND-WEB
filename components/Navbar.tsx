@@ -222,9 +222,10 @@ export function Navbar() {
       <div
         id="mobile-nav"
         className={`fixed inset-x-0 top-20 bottom-0 z-40 bg-[#021812] border-t border-[#0d382b] overflow-y-auto transition-transform duration-200 ease-out lg:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
+          isOpen ? "visible translate-x-0" : "invisible translate-x-full pointer-events-none"
         }`}
         aria-hidden={!isOpen}
+        inert={!isOpen}
       >
         <div className="px-6 py-6 space-y-4">
           <nav aria-label="Mobile Navigation" className="space-y-2">
